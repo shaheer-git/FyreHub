@@ -1,0 +1,33 @@
+@keyframes scroll-right {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(calc(-200% - 0.75rem));
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(calc(-100% - 0.75rem));
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.work-cards-container-1,
+.work-cards-container-2 {
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  white-space: nowrap;
+}
+
+.work-cards-container-1 div {
+  animation: scroll-right 5s linear infinite;
+}
+
+.work-cards-container-2 div {
+  animation: scroll-left 5s linear infinite;
+}

@@ -1,0 +1,21 @@
+.services-card:hover > img {
+    transform: rotate(-90deg);
+    transition: 250ms linear all;
+}
+
+.services-card:hover p {
+    color: #252525;
+    font-weight: bold;
+}
+
+.services-card:hover .card-icon, 
+.services-card:hover .card-desc {
+    display: block !important;
+}
+.services-card:hover {
+    z-index: 10;
+    transform: scale(1.05);
+}
+.services-card {
+    gap: 10;
+}
