@@ -28,7 +28,9 @@ export const Footer = () => {
           <div className='grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-12'>
             {/* Logo and Company Info */}
             <div className='flex flex-col gap-4'>
-              <img src={logo} alt="FyreHub" className='h-8 md:h-10' />
+              <Link to='/'>
+                <img src={logo} alt="FyreHub" className='h-8 md:h-10 cursor-pointer' />
+              </Link>
               <p className='text-[#AFFC41] text-sm'>
                 Your one-stop solution for all creative and branding needs.
               </p>
@@ -39,13 +41,13 @@ export const Footer = () => {
               <h4 className='text-[#AFFC41] font-bold text-base md:text-lg'>Quick Links</h4>
               <div className='flex flex-col gap-2'>
                 {footerLinks.map((link) => (
-                  <a 
+                  <Link
                     key={link.label}
-                    href={link.href}
+                    to={link.href}
                     className='text-[#AFFC41] text-sm hover:text-white transition-colors'
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -54,10 +56,10 @@ export const Footer = () => {
             <div className='flex flex-col gap-4'>
               <h4 className='text-[#AFFC41] font-bold text-base md:text-lg'>Services</h4>
               <div className='flex flex-col gap-2'>
-                <a href='#' className='text-[#AFFC41] text-sm hover:text-white transition-colors'>Web Design</a>
-                <a href='#' className='text-[#AFFC41] text-sm hover:text-white transition-colors'>Branding</a>
-                <a href='#' className='text-[#AFFC41] text-sm hover:text-white transition-colors'>Marketing</a>
-                <a href='#' className='text-[#AFFC41] text-sm hover:text-white transition-colors'>Photography</a>
+                <Link to='/services' className='text-[#AFFC41] text-sm hover:text-white transition-colors'>Web Design</Link>
+                <Link to='/services' className='text-[#AFFC41] text-sm hover:text-white transition-colors'>Branding</Link>
+                <Link to='/services' className='text-[#AFFC41] text-sm hover:text-white transition-colors'>Marketing</Link>
+                <Link to='/services' className='text-[#AFFC41] text-sm hover:text-white transition-colors'>Photography</Link>
               </div>
             </div>
 
@@ -68,13 +70,13 @@ export const Footer = () => {
                 <a href='mailto:hello@fyrehub.com' className='text-[#AFFC41] text-sm hover:text-white transition-colors'>
                   hello@fyrehub.com
                 </a>
-                <a href='tel:+1234567890' className='text-[#AFFC41] text-sm hover:text-white transition-colors'>
-                  +1 (234) 567-890
+                <a href='tel:+919876543210' className='text-[#AFFC41] text-sm hover:text-white transition-colors'>
+                  +91 98765 43210
                 </a>
               </div>
               <div className='flex gap-4 mt-2'>
                 {socialLinks.map((link) => (
-                  <a 
+                  <a
                     key={link.name}
                     href={link.href}
                     className='text-[#AFFC41] text-xs hover:text-white transition-colors'
