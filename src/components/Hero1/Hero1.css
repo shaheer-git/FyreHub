@@ -1,18 +1,23 @@
 .text-container {
     overflow: hidden;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    margin-top: 10px;
+    display: inline-block;
+    position: relative;
+    min-width: 80px;
+    min-height: 60px;
+    vertical-align: middle;
 }
 
 .text-slide {
     position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
     opacity: 0;
-    transform: translateY(100%);
     animation: slideText 9s infinite;
-    overflow-x: hidden;
-    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .text-slide:nth-child(1) {
@@ -27,8 +32,11 @@
     animation-delay: 6s;
 }
 
-.text-slide > img {
-    height: 90px;
+.text-slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 @keyframes slideText {
@@ -58,9 +66,9 @@
     }
 }
 
-.feature-count:hover > div, 
+.feature-count:hover > div,
 .feature-count:hover > span {
- color: #252525;
+    color: #252525;
 }
 
 /* @media only screen and (max-width: 492px) {
