@@ -1,15 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import logo from '../../assets/fyreLogo.svg'
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   const footerLinks = [
-    { label: 'Home', href: '#' },
-    { label: 'About Us', href: '#' },
-    { label: 'Services', href: '#' },
-    { label: 'Portfolio', href: '#' },
-    { label: 'Contact', href: '#' },
+    { label: 'Home', href: '/' },
+    { label: 'About Us', href: '/about' },
+    { label: 'Services', href: '/services' },
+    { label: 'Portfolio', href: '/portfolio' },
+    { label: 'Contact', href: '/contact' },
   ]
 
   const socialLinks = [
