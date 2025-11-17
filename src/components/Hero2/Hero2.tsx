@@ -140,24 +140,38 @@ export const Hero2 = () => {
         {/* Mobile/Tablet Grid */}
         <div className='md:hidden flex flex-col gap-4'>
           {services.map((service, idx) => (
-            <div 
+            <div
               key={idx}
-              className={`rounded-2xl p-6 transition-all duration-300 ${
+              className={`rounded-2xl p-6 transition-all duration-300 border-2 ${
                 service.highlighted
-                  ? 'bg-[#AFFC41] text-[#252525]'
-                  : 'bg-[#2a2630] text-[#AFFC41]'
+                  ? 'bg-[#AFFC41] text-[#252525] border-[#AFFC41]'
+                  : 'bg-[#2a2630] text-[#AFFC41] border-[#2a2630] hover:bg-[#AFFC41] hover:border-[#AFFC41]'
               }`}
             >
               <div className='flex items-start gap-4'>
-                <img src={service.icon} alt={service.title} className='w-10 h-10 mt-1 flex-shrink-0' />
+                <div className={`w-12 h-12 flex items-center justify-center rounded-lg flex-shrink-0 transition-all duration-300 ${
+                  service.highlighted
+                    ? 'bg-[#252525] bg-opacity-10'
+                    : 'bg-[#AFFC41] bg-opacity-20 group-hover:bg-[#252525] group-hover:bg-opacity-20'
+                }`}>
+                  <img src={service.icon} alt={service.title} className={`w-6 h-6 object-contain transition-all duration-300 ${
+                    service.highlighted
+                      ? 'brightness-0'
+                      : ''
+                  }`} />
+                </div>
                 <div className='flex-1'>
-                  <h3 className={`text-base font-bold mb-2 ${
-                    service.highlighted ? 'text-[#252525]' : 'text-[#AFFC41]'
+                  <h3 className={`text-base font-bold mb-2 transition-colors ${
+                    service.highlighted
+                      ? 'text-[#252525]'
+                      : 'text-[#AFFC41] hover:text-[#252525]'
                   }`}>
                     {service.title}
                   </h3>
-                  <p className={`text-sm ${
-                    service.highlighted ? 'text-[#252525]' : 'text-[#AFFC41]'
+                  <p className={`text-sm transition-colors ${
+                    service.highlighted
+                      ? 'text-[#252525]'
+                      : 'text-[#AFFC41] hover:text-[#252525]'
                   }`}>
                     {service.description}
                   </p>
