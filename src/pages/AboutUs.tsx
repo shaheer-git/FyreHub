@@ -10,7 +10,7 @@ export const AboutUs = () => {
         <div className='max-w-5xl w-full'>
           {/* Section 1: Intro */}
           <div className='mb-16 md:mb-24 animate-fade-in'>
-            <h1 className='text-4xl md:text-6xl lg:text-7xl font-light text-white mb-6 leading-tight'>
+            <h1 className='text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-white mb-6 leading-tight'>
               About <span className='text-[#AFFC41] font-bold'>FyreHub</span>
             </h1>
             <p className='text-base md:text-xl text-[#AFFC41] leading-relaxed mb-6'>
