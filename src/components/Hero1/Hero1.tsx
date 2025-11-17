@@ -29,7 +29,7 @@ export const Hero1 = () => {
               </div>
             </div>
             <div className=''>
-              <p className='text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-white leading-tight text-center sm:text-left'>Agency</p>
+              <p className='text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-light text-white leading-tight text-center sm:text-left'>Agency</p>
             </div>
           </div>
           <div className='fixed left-[-76%] opacity-[0.2] md:opacity-100 md:absolute md:left-1/4 md:top-[5px]'>
