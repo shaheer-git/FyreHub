@@ -81,7 +81,7 @@ export const AboutUs = () => {
 
           {/* Section 4: Team */}
           <div className='mb-16 md:mb-24'>
-            <h2 className='text-3xl md:text-5xl font-bold text-[#AFFC41] mb-8 md:mb-12 text-center'>Our Team</h2>
+            <h2 className='text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-[#AFFC41] mb-8 md:mb-12 text-center'>Our Team</h2>
             <p className='text-[#AFFC41] text-center text-base md:text-lg mb-8 max-w-3xl mx-auto'>
               Our talented team of designers, developers, and strategists work collaboratively to bring your vision to life. We're committed to delivering excellence in every project.
             </p>
