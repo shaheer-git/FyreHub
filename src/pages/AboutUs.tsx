@@ -37,7 +37,7 @@ export const AboutUs = () => {
 
           {/* Section 3: Why Choose Us */}
           <div className='mb-16 md:mb-24'>
-            <h2 className='text-3xl md:text-5xl font-bold text-[#AFFC41] mb-8 md:mb-12 text-center'>Why Choose FyreHub?</h2>
+            <h2 className='text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-[#AFFC41] mb-8 md:mb-12 text-center'>Why Choose FyreHub?</h2>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8'>
               {[
                 {
