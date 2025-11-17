@@ -10,7 +10,7 @@ export const Hero1 = () => {
     <div id="about-us" className='min-h-auto sm:min-h-screen md:h-screen'>
       <div className='h-full'>
         <div className='flex flex-col items-center justify-center relative w-full'>
-          <div className='w-11/12 sm:w-4/6 h-[330px] flex flex-col justify-center'>
+          <div className='w-11/12 sm:w-4/6 h-auto sm:h-[330px] flex flex-col justify-center'>
             <div className=''>
               <p className='text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-light text-white leading-tight w-full text-center sm:text-left'>Are You Looking</p>
             </div>
