@@ -78,22 +78,36 @@ export const Hero2 = () => {
               onMouseEnter={() => setHoveredCard(idx)}
               onMouseLeave={() => setHoveredCard(null)}
             >
-              <div className={`h-full rounded-3xl p-6 lg:p-8 flex flex-col items-center justify-start transition-all duration-300 overflow-hidden ${
+              <div className={`h-full rounded-3xl p-6 lg:p-8 flex flex-col items-center justify-start transition-all duration-300 overflow-hidden border-2 ${
                 service.highlighted
-                  ? 'bg-[#AFFC41] text-[#252525]'
-                  : 'bg-[#2a2630] text-[#AFFC41] hover:bg-[#3d3843]'
+                  ? 'bg-[#AFFC41] text-[#252525] border-[#AFFC41]'
+                  : 'bg-[#2a2630] text-[#AFFC41] hover:bg-[#AFFC41] border-[#2a2630] hover:border-[#AFFC41]'
               }`}>
                 {/* Arrow Icon */}
                 {!service.highlighted && (
-                  <img 
-                    src={cardArrow} 
-                    alt="" 
-                    className='absolute -top-6 -right-6 w-16 h-16 opacity-50 group-hover:opacity-100 transition-opacity'
+                  <img
+                    src={cardArrow}
+                    alt=""
+                    className={`absolute -top-6 -right-6 w-16 h-16 opacity-30 group-hover:opacity-20 transition-opacity ${hoveredCard === idx ? 'opacity-0' : ''}`}
                   />
                 )}
-                
+
                 {/* Service Icon */}
-                <img src={service.icon} alt={service.title} className='w-12 h-12 mb-4 object-contain' />
+                <div className={`w-14 h-14 mb-4 flex items-center justify-center rounded-full transition-all duration-300 ${
+                  service.highlighted
+                    ? 'bg-[#252525] bg-opacity-10'
+                    : hoveredCard === idx
+                    ? 'bg-[#252525] bg-opacity-20'
+                    : 'bg-[#AFFC41] bg-opacity-20'
+                }`}>
+                  <img src={service.icon} alt={service.title} className={`w-8 h-8 object-contain transition-all duration-300 ${
+                    service.highlighted
+                      ? 'brightness-0'
+                      : hoveredCard === idx
+                      ? 'brightness-0 invert'
+                      : ''
+                  }`} />
+                </div>
                 
                 {/* Service Title */}
                 <h3 className={`text-lg lg:text-xl font-bold mb-3 text-center transition-colors ${
