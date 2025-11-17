@@ -208,27 +208,30 @@ export const WhatWeDo = () => {
             {services.map((service, idx) => (
               <div
                 key={idx}
-                className={`rounded-2xl p-6 transition-all duration-300 border-2 ${
+                onClick={() => setTappedCard(tappedCard === idx ? null : idx)}
+                className={`rounded-2xl p-6 transition-all duration-300 border-2 cursor-pointer ${
                   service.highlighted
                     ? 'bg-[#AFFC41] text-[#252525] border-[#AFFC41]'
-                    : 'bg-[#2a2630] text-[#AFFC41] border-[#2a2630] hover:bg-[#AFFC41] hover:border-[#AFFC41]'
+                    : tappedCard === idx
+                    ? 'bg-[#AFFC41] text-[#252525] border-[#AFFC41]'
+                    : 'bg-[#2a2630] text-[#AFFC41] border-[#2a2630] active:bg-[#AFFC41] active:border-[#AFFC41]'
                 }`}
               >
                 <div className='flex items-start gap-4 mb-4'>
                   <div className={`w-12 h-12 flex items-center justify-center rounded-lg flex-shrink-0 transition-all duration-300 ${
-                    service.highlighted
+                    service.highlighted || tappedCard === idx
                       ? 'bg-[#252525] bg-opacity-10'
                       : 'bg-[#AFFC41] bg-opacity-20'
                   }`}>
                     <img src={service.icon} alt={service.title} className={`w-6 h-6 object-contain transition-all duration-300 ${
-                      service.highlighted
+                      service.highlighted || tappedCard === idx
                         ? 'brightness-0'
                         : ''
                     }`} />
                   </div>
                   <div className='flex-1'>
                     <h3 className={`text-base font-bold mb-1 transition-colors ${
-                      service.highlighted
+                      service.highlighted || tappedCard === idx
                         ? 'text-[#252525]'
                         : 'text-[#AFFC41]'
                     }`}>
@@ -236,24 +239,28 @@ export const WhatWeDo = () => {
                     </h3>
                   </div>
                 </div>
-                <p className={`text-sm transition-colors mb-3 ${
-                  service.highlighted
-                    ? 'text-[#252525]'
-                    : 'text-[#AFFC41]'
-                }`}>
-                  {service.description}
-                </p>
-                <div className='flex flex-wrap gap-2'>
-                  {service.features.map((feature, i) => (
-                    <span key={i} className={`text-xs px-2 py-1 rounded ${
-                      service.highlighted
-                        ? 'bg-[#252525] bg-opacity-20 text-[#252525]'
-                        : 'bg-[#AFFC41] bg-opacity-20 text-[#AFFC41]'
+                {(tappedCard === idx || service.highlighted) && (
+                  <div className='animate-fade-in'>
+                    <p className={`text-sm transition-colors mb-3 ${
+                      service.highlighted || tappedCard === idx
+                        ? 'text-[#252525]'
+                        : 'text-[#AFFC41]'
                     }`}>
-                      {feature}
-                    </span>
-                  ))}
-                </div>
+                      {service.description}
+                    </p>
+                    <div className='flex flex-wrap gap-2'>
+                      {service.features.map((feature, i) => (
+                        <span key={i} className={`text-xs px-2 py-1 rounded ${
+                          service.highlighted || tappedCard === idx
+                            ? 'bg-[#252525] bg-opacity-20 text-[#252525]'
+                            : 'bg-[#AFFC41] bg-opacity-20 text-[#AFFC41]'
+                        }`}>
+                          {feature}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           </div>
