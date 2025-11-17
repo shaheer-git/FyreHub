@@ -111,17 +111,21 @@ export const Hero2 = () => {
                 
                 {/* Service Title */}
                 <h3 className={`text-lg lg:text-xl font-bold mb-3 text-center transition-colors ${
-                  service.highlighted 
+                  service.highlighted
                     ? 'text-[#252525]'
-                    : 'text-[#AFFC41] group-hover:text-white'
+                    : hoveredCard === idx
+                    ? 'text-[#252525]'
+                    : 'text-[#AFFC41]'
                 }`}>
                   {service.title}
                 </h3>
-                
+
                 {/* Service Description - show on hover or highlighted card */}
                 {(hoveredCard === idx || service.highlighted) && (
                   <p className={`text-sm text-center leading-relaxed animate-fade-in ${
                     service.highlighted
+                      ? 'text-[#252525]'
+                      : hoveredCard === idx
                       ? 'text-[#252525]'
                       : 'text-white'
                   }`}>
