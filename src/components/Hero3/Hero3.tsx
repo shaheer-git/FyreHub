@@ -11,6 +11,19 @@ export const Hero3 = () => {
         'https://cdn.jsdelivr.net/gh/shaheer-git/FyreHubAssets/cards-container-1/6.png',
     ]
 
+    const portfolioWebsites = [
+        {
+            name: 'EzyScrap',
+            url: 'https://ezyscrap.com',
+            thumbnail: 'https://image.thum.io/get/width/600/height/400/crop/1/noanimate/https://ezyscrap.com'
+        },
+        {
+            name: 'GOAT Gaming Café',
+            url: 'https://goatgamingcafe.com',
+            thumbnail: 'https://image.thum.io/get/width/600/height/400/crop/1/noanimate/https://goatgamingcafe.com'
+        }
+    ]
+
     return (
         <div className='min-h-screen flex flex-col justify-center items-center py-12 px-4'>
             <div className='mb-8 md:mb-12 text-center'>
