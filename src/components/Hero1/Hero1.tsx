@@ -12,10 +12,10 @@ export const Hero1 = () => {
         <div className='flex flex-col items-center justify-center relative w-full'>
           <div className='w-11/12 sm:w-4/6 h-[330px] flex flex-col justify-center'>
             <div className=''>
-              <p className='text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-white leading-tight w-full text-center sm:text-left'>Are You Looking</p>
+              <p className='text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-light text-white leading-tight w-full text-center sm:text-left'>Are You Looking</p>
             </div>
             <div className='flex flex-wrap justify-center sm:justify-start'>
-              <p className='text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-white leading-tight'>For a </p>
+              <p className='text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-light text-white leading-tight'>For a </p>
               <div className="text-container">
                 <div className="p-2 text-slide mt-4 ml-2">
                   <img src={creativeText} alt="" srcSet="" className='' />
