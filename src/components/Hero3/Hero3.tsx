@@ -14,7 +14,7 @@ export const Hero3 = () => {
     return (
         <div className='min-h-screen flex flex-col justify-center items-center py-12 px-4'>
             <div className='mb-8 md:mb-12 text-center'>
-                <p className='text-4xl md:text-6xl lg:text-8xl font-bold text-[#AFFC41]'>our works</p>
+                <p className='text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-[#AFFC41]'>our works</p>
             </div>
             
             <div className="w-full max-w-7xl flex flex-col gap-8">
