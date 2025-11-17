@@ -113,6 +113,36 @@ export const Pricing = () => {
             </div>
           </div>
 
+          {/* Selected Plan Card */}
+          {selectedPlan && (
+            <div className='mb-16 animate-fade-in'>
+              <div className='max-w-2xl mx-auto bg-gradient-to-br from-[#AFFC41] to-[#9cda2a] rounded-3xl p-8 md:p-12 border-2 border-[#AFFC41] shadow-2xl'>
+                <div className='text-center'>
+                  <h2 className='text-[#252525] text-lg md:text-xl font-semibold mb-2'>Your Selected Plan</h2>
+                  <h3 className='text-[#252525] text-4xl md:text-5xl font-bold mb-4'>{selectedPlan.name}</h3>
+                  <div className='flex items-center justify-center gap-1 mb-6'>
+                    <span className='text-[#252525] text-5xl md:text-6xl font-bold'>₹{getPrice(selectedPlan.monthlyPrice).toLocaleString()}</span>
+                    <span className='text-[#252525] text-lg opacity-80'>/ {billingCycle === 'monthly' ? 'month' : 'year'}</span>
+                  </div>
+                  {billingCycle === 'yearly' && (
+                    <div className='mb-6 p-4 bg-[#252525] bg-opacity-10 rounded-lg'>
+                      <p className='text-[#252525] font-semibold'>
+                        Yearly Savings: ₹{((selectedPlan.monthlyPrice * 12) - getPrice(selectedPlan.monthlyPrice)).toLocaleString()}
+                      </p>
+                    </div>
+                  )}
+                  <p className='text-[#252525] text-base opacity-90 mb-6'>{selectedPlan.description}</p>
+                  <button
+                    onClick={() => setSelectedPlan(null)}
+                    className='bg-[#252525] text-[#AFFC41] px-8 md:px-12 py-3 md:py-4 rounded-lg font-bold text-base hover:bg-white transition-all transform hover:scale-105'
+                  >
+                    Clear Selection
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* Pricing Cards */}
           <div className='grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-16'>
             {plans.map((plan, idx) => (
