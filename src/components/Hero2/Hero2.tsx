@@ -61,7 +61,7 @@ export const Hero2 = () => {
   return (
     <div className='min-h-screen flex flex-col justify-center items-center py-16 md:py-20 px-4 md:px-8'>
       <div className='mb-12 md:mb-16 text-center'>
-        <p className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-[#AFFC41]'>what we do</p>
+        <p className='text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-[#AFFC41]'>what we do</p>
       </div>
       
       <div className='w-full max-w-7xl'>
