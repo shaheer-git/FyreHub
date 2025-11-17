@@ -4,6 +4,7 @@ import { Footer } from '../components/Footer/Footer'
 
 export const Pricing = () => {
   const [billingCycle, setBillingCycle] = useState('monthly')
+  const [selectedPlan, setSelectedPlan] = useState(null)
 
   const plans = [
     {
