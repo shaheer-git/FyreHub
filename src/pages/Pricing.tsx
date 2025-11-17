@@ -79,7 +79,7 @@ export const Pricing = () => {
         <div className='max-w-7xl w-full'>
           {/* Header */}
           <div className='text-center mb-12 md:mb-16 animate-fade-in'>
-            <h1 className='text-4xl md:text-6xl lg:text-7xl font-light text-white mb-4 leading-tight'>
+            <h1 className='text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-white mb-4 leading-tight'>
               Simple <span className='text-[#AFFC41] font-bold'>Transparent</span> Pricing
             </h1>
             <p className='text-base md:text-xl text-[#AFFC41] mb-8'>

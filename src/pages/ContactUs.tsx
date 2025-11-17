@@ -43,7 +43,7 @@ export const ContactUs = () => {
         <div className='max-w-4xl w-full'>
           {/* Header */}
           <div className='text-center mb-12 md:mb-16 animate-fade-in'>
-            <h1 className='text-4xl md:text-6xl lg:text-7xl font-light text-white mb-4 leading-tight'>
+            <h1 className='text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-white mb-4 leading-tight'>
               Get In <span className='text-[#AFFC41] font-bold'>Touch</span>
             </h1>
             <p className='text-base md:text-xl text-[#AFFC41]'>

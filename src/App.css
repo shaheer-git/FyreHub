@@ -1,0 +1,249 @@
+/* Professional gradient backgrounds for sections */
+.gradient-section {
+  background: linear-gradient(135deg, rgba(175, 252, 65, 0.03) 0%, rgba(175, 252, 65, 0) 100%);
+}
+
+.dark-gradient-section {
+  background: linear-gradient(135deg, rgba(13, 10, 16, 0.5) 0%, rgba(42, 38, 48, 0.3) 100%);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced button styles */
+button, a {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Card hover effects */
+.card-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(175, 252, 65, 0.1);
+  transition: left 0.3s ease;
+  pointer-events: none;
+}
+
+.card-hover:hover::before {
+  left: 100%;
+}
+
+/* Glow effect */
+.glow-effect {
+  box-shadow: 0 0 20px rgba(175, 252, 65, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.glow-effect:hover {
+  box-shadow: 0 0 40px rgba(175, 252, 65, 0.2);
+}
+
+/* Text gradient */
+.text-gradient {
+  background: linear-gradient(135deg, #AFFC41 0%, #9cda2a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Smooth transitions */
+* {
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Remove transition for certain elements to avoid flashiness */
+button, input, textarea, select {
+  transition: none;
+}
+
+/* Ensure smooth transitions on interactive elements */
+input:focus, textarea:focus, select:focus {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Enhanced backdrop blur */
+.backdrop-blur {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Professional section spacing */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Responsive typography adjustments */
+@media (max-width: 768px) {
+  /* Reduce excessive spacing on mobile */
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Better mobile typography */
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.5px;
+  }
+}
+
+/* Loading animations for page elements */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.fade-in-down {
+  animation: fadeInDown 0.6s ease-out;
+}
+
+/* Professional link styles */
+a {
+  text-decoration: none;
+}
+
+/* Ensure proper link focus for accessibility */
+a:focus-visible {
+  outline: 2px solid #AFFC41;
+  outline-offset: 2px;
+}
+
+button:focus-visible {
+  outline: 2px solid #AFFC41;
+  outline-offset: 2px;
+}
+
+/* Professional border styles */
+.border-gradient {
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+/* Shadow effects */
+.shadow-glow {
+  box-shadow: 0 10px 30px rgba(175, 252, 65, 0.15);
+}
+
+.shadow-lg-glow {
+  box-shadow: 0 20px 50px rgba(175, 252, 65, 0.2);
+}
+
+/* Ensure consistent spacing across pages */
+main, article, section {
+  padding: 0;
+}
+
+/* Professional container styles */
+.container-professional {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .container-professional {
+    padding: 0 2rem;
+  }
+}
+
+/* Improved focus states for form elements */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #AFFC41;
+  box-shadow: 0 0 0 3px rgba(175, 252, 65, 0.1);
+}
+
+/* Better spacing for lists */
+ul, ol {
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* Ensure code blocks are styled properly */
+code {
+  background-color: #2a2630;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #AFFC41;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+th, td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(175, 252, 65, 0.2);
+  color: #AFFC41;
+}
+
+th {
+  background-color: rgba(175, 252, 65, 0.1);
+  font-weight: bold;
+}
+
+/* Professional quote styles */
+blockquote {
+  border-left: 4px solid #AFFC41;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: #AFFC41;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  
+  a {
+    color: #000;
+  }
+  
+  .no-print {
+    display: none;
+  }
+}

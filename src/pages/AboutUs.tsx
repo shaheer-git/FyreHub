@@ -10,7 +10,7 @@ export const AboutUs = () => {
         <div className='max-w-5xl w-full'>
           {/* Section 1: Intro */}
           <div className='mb-16 md:mb-24 animate-fade-in'>
-            <h1 className='text-4xl md:text-6xl lg:text-7xl font-light text-white mb-6 leading-tight'>
+            <h1 className='text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-white mb-6 leading-tight'>
               About <span className='text-[#AFFC41] font-bold'>FyreHub</span>
             </h1>
             <p className='text-base md:text-xl text-[#AFFC41] leading-relaxed mb-6'>
@@ -37,7 +37,7 @@ export const AboutUs = () => {
 
           {/* Section 3: Why Choose Us */}
           <div className='mb-16 md:mb-24'>
-            <h2 className='text-3xl md:text-5xl font-bold text-[#AFFC41] mb-8 md:mb-12 text-center'>Why Choose FyreHub?</h2>
+            <h2 className='text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-[#AFFC41] mb-8 md:mb-12 text-center'>Why Choose FyreHub?</h2>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8'>
               {[
                 {
@@ -81,7 +81,7 @@ export const AboutUs = () => {
 
           {/* Section 4: Team */}
           <div className='mb-16 md:mb-24'>
-            <h2 className='text-3xl md:text-5xl font-bold text-[#AFFC41] mb-8 md:mb-12 text-center'>Our Team</h2>
+            <h2 className='text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-[#AFFC41] mb-8 md:mb-12 text-center'>Our Team</h2>
             <p className='text-[#AFFC41] text-center text-base md:text-lg mb-8 max-w-3xl mx-auto'>
               Our talented team of designers, developers, and strategists work collaboratively to bring your vision to life. We're committed to delivering excellence in every project.
             </p>

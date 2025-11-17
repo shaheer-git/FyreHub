@@ -7,15 +7,15 @@ import './Hero1.css'
 
 export const Hero1 = () => {
   return (
-    <div id="about-us" className='min-h-screen md:h-screen'>
+    <div id="about-us" className='min-h-auto sm:min-h-screen md:h-screen'>
       <div className='h-full'>
         <div className='flex flex-col items-center justify-center relative w-full'>
-          <div className='w-11/12 sm:w-4/6 h-[330px] flex flex-col justify-center'>
+          <div className='w-11/12 sm:w-4/6 h-auto sm:h-[330px] flex flex-col justify-center'>
             <div className=''>
-              <p className='text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-white leading-tight w-full text-center sm:text-left'>Are You Looking</p>
+              <p className='text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-light text-white leading-tight w-full text-center sm:text-left'>Are You Looking</p>
             </div>
             <div className='flex flex-wrap justify-center sm:justify-start'>
-              <p className='text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-white leading-tight'>For a </p>
+              <p className='text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-light text-white leading-tight'>For a </p>
               <div className="text-container">
                 <div className="p-2 text-slide mt-4 ml-2">
                   <img src={creativeText} alt="" srcSet="" className='' />
@@ -29,7 +29,7 @@ export const Hero1 = () => {
               </div>
             </div>
             <div className=''>
-              <p className='text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-white leading-tight text-center sm:text-left'>Agency</p>
+              <p className='text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-light text-white leading-tight text-center sm:text-left'>Agency</p>
             </div>
           </div>
           <div className='fixed left-[-76%] opacity-[0.2] md:opacity-100 md:absolute md:left-1/4 md:top-[5px]'>
