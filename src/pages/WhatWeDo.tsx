@@ -9,6 +9,7 @@ import socialMediaIcon from '../assets/social-media-mangt-icon.svg'
 
 export const WhatWeDo = () => {
   const [hoveredCard, setHoveredCard] = useState(null)
+  const [tappedCard, setTappedCard] = useState(null)
 
   const services = [
     {
