@@ -174,7 +174,9 @@ export const Pricing = () => {
                 </div>
 
                 {/* CTA Button */}
-                <button className={`w-full py-3 md:py-4 rounded-lg font-bold mb-8 transition-all transform hover:scale-105 ${
+                <button
+                  onClick={() => setSelectedPlan(plan)}
+                  className={`w-full py-3 md:py-4 rounded-lg font-bold mb-8 transition-all transform hover:scale-105 ${
                   plan.highlighted
                     ? 'bg-[#252525] text-[#AFFC41] hover:bg-white'
                     : 'bg-[#AFFC41] text-[#252525] hover:bg-white'
