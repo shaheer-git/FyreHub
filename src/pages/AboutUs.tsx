@@ -1,12 +1,15 @@
-import React from 'react'
 import { Navbar } from '../components/Navbar'
 import { Footer } from '../components/Footer/Footer'
+import { useEffect } from 'react'
 
 export const AboutUs = () => {
+  useEffect(() => {
+     window.scrollTo(0, 0) 
+    }, [])
   return (
     <div>
       <Navbar />
-      <div className='min-h-screen flex flex-col items-center justify-center px-4 md:px-8 pt-20 md:pt-24'>
+      <div className='min-h-screen flex flex-col items-center justify-center px-4 md:px-8 pt-10 md:pt-24'>
         <div className='max-w-5xl w-full'>
           {/* Section 1: Intro */}
           <div className='mb-16 md:mb-24 animate-fade-in'>

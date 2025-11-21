@@ -1,4 +1,3 @@
-import React from 'react'
 import './Hero3.css'
 
 export const Hero3 = () => {
@@ -26,10 +25,10 @@ export const Hero3 = () => {
 
     return (
         <div className='min-h-screen flex flex-col justify-center items-center py-12 px-4'>
-            <div className='mb-8 md:mb-12 text-center'>
-                <p className='text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-[#AFFC41]'>our works</p>
-            </div>
-            
+            <h1 className='text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-white mb-6 leading-tight'>
+                Our <span className='text-[#AFFC41] font-bold'>Works</span>
+            </h1>
+
             <div className="w-full max-w-7xl flex flex-col gap-12">
                 {/* Project Carousels Section */}
                 <div className="flex flex-col gap-8">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Navbar } from '../components/Navbar'
 import { Footer } from '../components/Footer/Footer'
 
@@ -36,10 +36,14 @@ export const ContactUs = () => {
     setTimeout(() => setSubmitted(false), 5000)
   }
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <div>
       <Navbar />
-      <div className='min-h-screen flex flex-col items-center justify-center px-4 md:px-8 py-16 md:py-24 pt-20 md:pt-24'>
+      <div className='min-h-screen flex flex-col items-center justify-center px-4 md:px-8 py-16 md:py-24 md:pt-24'>
         <div className='max-w-4xl w-full'>
           {/* Header */}
           <div className='text-center mb-12 md:mb-16 animate-fade-in'>
@@ -64,7 +68,7 @@ export const ContactUs = () => {
               </div>
 
               {/* Phone */}
-              <div className='bg-[#2a2630] rounded-2xl p-6 md:p-8 border border-[#AFFC41] border-opacity-30 hover:border-opacity-100 transition-all duration-300 animate-slide-right' style={{animationDelay: '0.1s'}}>
+              <div className='bg-[#2a2630] rounded-2xl p-6 md:p-8 border border-[#AFFC41] border-opacity-30 hover:border-opacity-100 transition-all duration-300 animate-slide-right' style={{ animationDelay: '0.1s' }}>
                 <h3 className='text-[#AFFC41] font-bold text-lg mb-2'>Phone</h3>
                 <a href='tel:+919876543210' className='text-[#AFFC41] hover:text-white transition-colors'>
                   +91 98765 43210
@@ -72,7 +76,7 @@ export const ContactUs = () => {
               </div>
 
               {/* Address */}
-              <div className='bg-[#2a2630] rounded-2xl p-6 md:p-8 border border-[#AFFC41] border-opacity-30 hover:border-opacity-100 transition-all duration-300 animate-slide-right' style={{animationDelay: '0.2s'}}>
+              <div className='bg-[#2a2630] rounded-2xl p-6 md:p-8 border border-[#AFFC41] border-opacity-30 hover:border-opacity-100 transition-all duration-300 animate-slide-right' style={{ animationDelay: '0.2s' }}>
                 <h3 className='text-[#AFFC41] font-bold text-lg mb-2'>Location</h3>
                 <p className='text-[#AFFC41]'>
                   India<br />
@@ -82,7 +86,7 @@ export const ContactUs = () => {
             </div>
 
             {/* Contact Form */}
-            <form 
+            <form
               onSubmit={handleSubmit}
               className='md:col-span-2 bg-[#2a2630] rounded-3xl p-8 md:p-10 border border-[#AFFC41] border-opacity-30 animate-slide-left'
             >

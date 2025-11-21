@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Navbar } from '../components/Navbar'
 import { Footer } from '../components/Footer/Footer'
 import cardArrow from '../assets/Card-Arrow.svg'
@@ -8,8 +8,8 @@ import webDesignDevIcon from '../assets/wed-design-dev-icon.svg'
 import socialMediaIcon from '../assets/social-media-mangt-icon.svg'
 
 export const WhatWeDo = () => {
-  const [hoveredCard, setHoveredCard] = useState(null)
-  const [tappedCard, setTappedCard] = useState(null)
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null)
+  const [tappedCard, setTappedCard] = useState<number | null>(null)
 
   const services = [
     {
@@ -31,7 +31,7 @@ export const WhatWeDo = () => {
       icon: webDesignDevIcon,
       description: 'Create engaging, user-friendly websites that look great on any device. We handle everything from design to development, ensuring optimal performance and user experience.',
       features: ['Responsive Design', 'UX/UI', 'Development', 'Optimization'],
-      highlighted: true
+      highlighted: false
     },
     {
       title: 'Social Media Management',
@@ -93,12 +93,16 @@ export const WhatWeDo = () => {
     }
   ]
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <div>
       <Navbar />
 
       {/* Hero Section */}
-      <div className='min-h-screen pt-20 md:pt-24 flex flex-col justify-center items-center px-4 md:px-8'>
+      <div className='min-h-screen md:pt-24 flex flex-col justify-center items-center px-4 md:px-8'>
         <div className='max-w-4xl text-center mb-12 md:mb-16'>
           <h1 className='text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-white mb-6 leading-tight'>
             Our <span className='text-[#AFFC41] font-bold'>Creative Services</span>
@@ -111,9 +115,9 @@ export const WhatWeDo = () => {
 
       {/* Services Grid Section */}
       <div className='min-h-screen flex flex-col justify-center items-center py-16 md:py-20 px-4 md:px-8'>
-        <div className='mb-12 md:mb-16 text-center'>
-          <p className='text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-[#AFFC41]'>what we do</p>
-        </div>
+        <h1 className='text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-white mb-6 leading-tight'>
+          What <span className='text-[#AFFC41] font-bold'>We Do</span>
+        </h1>
 
         <div className='w-full max-w-7xl'>
           {/* Desktop Grid */}
@@ -121,19 +125,17 @@ export const WhatWeDo = () => {
             {services.map((service, idx) => (
               <div
                 key={idx}
-                className={`relative cursor-pointer group transition-all duration-300 ${
-                  service.highlighted
-                    ? 'lg:col-span-1 lg:row-span-2'
-                    : ''
-                }`}
+                className={`relative cursor-pointer group transition-all duration-300 ${service.highlighted
+                  ? 'lg:col-span-1 lg:row-span-2'
+                  : ''
+                  }`}
                 onMouseEnter={() => setHoveredCard(idx)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
-                <div className={`h-full rounded-3xl p-6 lg:p-8 flex flex-col items-center justify-start transition-all duration-300 overflow-hidden border-2 ${
-                  service.highlighted
-                    ? 'bg-[#AFFC41] text-[#252525] border-[#AFFC41]'
-                    : 'bg-[#2a2630] text-[#AFFC41] hover:bg-[#AFFC41] border-[#2a2630] hover:border-[#AFFC41]'
-                }`}>
+                <div className={`h-full rounded-3xl p-6 lg:p-8 flex flex-col items-center justify-start transition-all duration-300 overflow-hidden border-2 ${service.highlighted
+                  ? 'bg-[#AFFC41] text-[#252525] border-[#AFFC41]'
+                  : 'bg-[#2a2630] text-[#AFFC41] hover:bg-[#AFFC41] hover:text-[#252525] hover:border-[#AFFC41]'
+                  }`}>
                   {/* Arrow Icon */}
                   {!service.highlighted && (
                     <img
@@ -144,54 +146,49 @@ export const WhatWeDo = () => {
                   )}
 
                   {/* Service Icon */}
-                  <div className={`w-14 h-14 mb-4 flex items-center justify-center rounded-full transition-all duration-300 ${
-                    service.highlighted
-                      ? 'bg-[#252525] bg-opacity-10'
-                      : hoveredCard === idx
+                  <div className={`w-14 h-14 mb-4 flex items-center justify-center rounded-full transition-all duration-300 ${service.highlighted
+                    ? 'bg-[#252525] bg-opacity-10'
+                    : hoveredCard === idx
                       ? 'bg-[#252525] bg-opacity-20'
                       : 'bg-[#AFFC41] bg-opacity-20'
-                  }`}>
-                    <img src={service.icon} alt={service.title} className={`w-8 h-8 object-contain transition-all duration-300 ${
-                      service.highlighted
-                        ? 'brightness-0'
-                        : hoveredCard === idx
+                    }`}>
+                    <img src={service.icon} alt={service.title} className={`w-8 h-8 object-contain transition-all duration-300 ${service.highlighted
+                      ? 'brightness-0'
+                      : hoveredCard === idx
                         ? 'brightness-0 invert'
                         : ''
-                    }`} />
+                      }`} />
                   </div>
 
                   {/* Service Title */}
-                  <h3 className={`text-lg lg:text-xl font-bold mb-3 text-center transition-colors ${
-                    service.highlighted
-                      ? 'text-[#252525]'
-                      : hoveredCard === idx
+                  <h3 className={`text-lg lg:text-xl font-bold mb-3 text-center transition-colors ${service.highlighted
+                    ? 'text-[#252525]'
+                    : hoveredCard === idx
                       ? 'text-[#252525]'
                       : 'text-[#AFFC41]'
-                  }`}>
+                    }`}>
                     {service.title}
                   </h3>
 
                   {/* Service Description - show on hover or highlighted card */}
                   {(hoveredCard === idx || service.highlighted) && (
                     <div className='animate-fade-in'>
-                      <p className={`text-sm text-center leading-relaxed mb-4 ${
-                        service.highlighted
-                          ? 'text-[#252525]'
-                          : hoveredCard === idx
+                      <p className={`text-sm text-center leading-relaxed mb-4 ${service.highlighted
+                        ? 'text-[#252525]'
+                        : hoveredCard === idx
                           ? 'text-[#252525]'
                           : 'text-white'
-                      }`}>
+                        }`}>
                         {service.description}
                       </p>
                       <div className='flex flex-wrap justify-center gap-2'>
                         {service.features.map((feature, i) => (
-                          <span key={i} className={`text-xs px-3 py-1 rounded-full ${
-                            service.highlighted
-                              ? 'bg-[#252525] bg-opacity-20 text-[#252525]'
-                              : hoveredCard === idx
+                          <span key={i} className={`text-xs px-3 py-1 rounded-full ${service.highlighted
+                            ? 'bg-[#252525] bg-opacity-20 text-[#252525]'
+                            : hoveredCard === idx
                               ? 'bg-[#252525] bg-opacity-20 text-[#252525]'
                               : 'bg-[#AFFC41] bg-opacity-20 text-[#AFFC41]'
-                          }`}>
+                            }`}>
                             {feature}
                           </span>
                         ))}
@@ -209,52 +206,46 @@ export const WhatWeDo = () => {
               <div
                 key={idx}
                 onClick={() => setTappedCard(tappedCard === idx ? null : idx)}
-                className={`rounded-2xl p-6 transition-all duration-300 border-2 cursor-pointer ${
-                  service.highlighted
-                    ? 'bg-[#AFFC41] text-[#252525] border-[#AFFC41]'
-                    : tappedCard === idx
+                className={`rounded-2xl p-6 transition-all duration-300 border-2 cursor-pointer ${service.highlighted
+                  ? 'bg-[#AFFC41] text-[#252525] border-[#AFFC41]'
+                  : tappedCard === idx
                     ? 'bg-[#AFFC41] text-[#252525] border-[#AFFC41]'
                     : 'bg-[#2a2630] text-[#AFFC41] border-[#2a2630] active:bg-[#AFFC41] active:border-[#AFFC41]'
-                }`}
+                  }`}
               >
-                <div className='flex items-start gap-4 mb-4'>
-                  <div className={`w-12 h-12 flex items-center justify-center rounded-lg flex-shrink-0 transition-all duration-300 ${
-                    service.highlighted || tappedCard === idx
-                      ? 'bg-[#252525] bg-opacity-10'
-                      : 'bg-[#AFFC41] bg-opacity-20'
-                  }`}>
-                    <img src={service.icon} alt={service.title} className={`w-6 h-6 object-contain transition-all duration-300 ${
-                      service.highlighted || tappedCard === idx
-                        ? 'brightness-0'
-                        : ''
-                    }`} />
+                <div className='flex items-center gap-4 mb-4'>
+                  <div className={`w-12 h-12 flex items-center justify-center rounded-lg flex-shrink-0 transition-all duration-300 ${service.highlighted || tappedCard === idx
+                    ? 'bg-[#252525] bg-opacity-10'
+                    : 'bg-[#AFFC41] bg-opacity-100'
+                    }`}>
+                    <img src={service.icon} alt={service.title} className={`w-6 h-6 object-contain transition-all duration-300 ${service.highlighted || tappedCard === idx
+                      ? 'brightness-0'
+                      : ''
+                      }`} />
                   </div>
                   <div className='flex-1'>
-                    <h3 className={`text-base font-bold mb-1 transition-colors ${
-                      service.highlighted || tappedCard === idx
-                        ? 'text-[#252525]'
-                        : 'text-[#AFFC41]'
-                    }`}>
+                    <h3 className={`text-base font-bold mb-1 transition-colors ${service.highlighted || tappedCard === idx
+                      ? 'text-[#252525]'
+                      : 'text-[#AFFC41]'
+                      }`}>
                       {service.title}
                     </h3>
                   </div>
                 </div>
                 {(tappedCard === idx || service.highlighted) && (
                   <div className='animate-fade-in'>
-                    <p className={`text-sm transition-colors mb-3 ${
-                      service.highlighted || tappedCard === idx
-                        ? 'text-[#252525]'
-                        : 'text-[#AFFC41]'
-                    }`}>
+                    <p className={`text-sm transition-colors mb-3 ${service.highlighted || tappedCard === idx
+                      ? 'text-[#252525]'
+                      : 'text-[#AFFC41]'
+                      }`}>
                       {service.description}
                     </p>
                     <div className='flex flex-wrap gap-2'>
                       {service.features.map((feature, i) => (
-                        <span key={i} className={`text-xs px-2 py-1 rounded ${
-                          service.highlighted || tappedCard === idx
-                            ? 'bg-[#252525] bg-opacity-20 text-[#252525]'
-                            : 'bg-[#AFFC41] bg-opacity-20 text-[#AFFC41]'
-                        }`}>
+                        <span key={i} className={`text-xs px-2 py-1 rounded ${service.highlighted || tappedCard === idx
+                          ? 'bg-[#252525] bg-opacity-20 text-[#252525]'
+                          : 'bg-[#AFFC41] bg-opacity-20 text-[#AFFC41]'
+                          }`}>
                           {feature}
                         </span>
                       ))}

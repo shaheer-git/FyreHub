@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../assets/fyreLogo.svg'
 
@@ -58,7 +58,7 @@ export const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className='absolute top-20 left-0 right-0 bg-[#17141b] border border-[#AFFC41] rounded-lg m-2 p-4 md:hidden z-40'>
+        <div className='absolute top-12 left-0 right-0 bg-[#17141b] border border-[#AFFC41] rounded-lg m-2 p-4 md:hidden z-40'>
           <div className='flex flex-col gap-4'>
             {navItems.map((item) => (
               <Link 

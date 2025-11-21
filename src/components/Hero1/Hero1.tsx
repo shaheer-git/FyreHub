@@ -1,4 +1,3 @@
-import React from 'react'
 import greekG from '../../assets/Elucid-Picture.svg'
 import creativeText from '../../assets/Creative-Text.svg'
 import designText from '../../assets/Design-Text.svg'
@@ -9,15 +8,15 @@ export const Hero1 = () => {
   return (
     <div id="about-us" className='min-h-auto sm:min-h-screen md:h-screen'>
       <div className='h-full'>
-        <div className='flex flex-col items-center justify-center relative w-full'>
+        <div className='flex flex-col items-center justify-center relative w-full mt-10'>
           <div className='w-11/12 sm:w-4/6 h-auto sm:h-[330px] flex flex-col justify-center'>
             <div className=''>
-              <p className='text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-light text-white leading-tight w-full text-center sm:text-left'>Are You Looking</p>
+              <p className='text-4xl sm:text-4xl md:text-6xl lg:text-8xl font-light text-white leading-tight w-full text-center sm:text-left'>Are You Looking</p>
             </div>
             <div className='flex flex-wrap justify-center sm:justify-start'>
-              <p className='text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-light text-white leading-tight'>For a </p>
+              <p className='text-4xl sm:text-4xl md:text-6xl lg:text-8xl font-light text-white leading-tight'>For a </p>
               <div className="text-container">
-                <div className="p-2 text-slide mt-4 ml-2">
+                <div className="p-2 text-slide lg:mt-4 ml-2">
                   <img src={creativeText} alt="" srcSet="" className='' />
                 </div>
                 <div className="p-2 text-slide">
@@ -29,13 +28,13 @@ export const Hero1 = () => {
               </div>
             </div>
             <div className=''>
-              <p className='text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-light text-white leading-tight text-center sm:text-left'>Agency</p>
+              <p className='text-4xl sm:text-4xl md:text-6xl lg:text-8xl font-light text-white leading-tight text-center sm:text-left'>Agency</p>
             </div>
           </div>
           <div className='fixed left-[-76%] opacity-[0.2] md:opacity-100 md:absolute md:left-1/4 md:top-[5px]'>
             <img src={greekG} alt="one stop solution for brand needs" srcSet="" className='' />
           </div>
-          <div className='w-full mt-8 md:mt-12 relative z-20 px-4 sm:px-6'>
+          <div className='w-full mt-12 relative z-20 px-4 sm:px-6'>
             <div className='bg-[#AFFC41] rounded-2xl md:rounded-3xl p-4 md:p-5 lg:p-6 xl:p-8'>
               {/* Stats Grid */}
               <div className='grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-5 xl:gap-6'>

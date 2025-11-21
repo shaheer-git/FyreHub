@@ -1,4 +1,3 @@
-import React from 'react'
 import './Testimonials.css'
 
 export const Testimonials = () => {
@@ -37,11 +36,11 @@ export const Testimonials = () => {
           {testimonials.map((testimonial, idx) => (
             <div 
               key={idx}
-              className='testimonial-card relative h-96 bg-gradient-to-br from-[#f5f5f5] to-[#e8e8e8] rounded-3xl p-8 overflow-hidden group shadow-lg hover:shadow-2xl transition-shadow duration-300'
+              className='testimonial-card relative h-96 bg-gradient-to-br from-[#f5f5f5] rounded-3xl p-8 overflow-hidden group shadow-lg hover:shadow-2xl transition-shadow duration-300'
             >
               {/* Watermark text background */}
               <div className='absolute inset-0 flex items-center justify-center pointer-events-none'>
-                <p className='text-[120px] md:text-[140px] lg:text-[160px] font-bold text-[#AFFC41] opacity-5 select-none'>
+                <p className='text-7xl md:text-[140px] lg:text-[160px] font-bold text-[#AFFC41] opacity-[0.5] select-none'>
                   {testimonial.watermark}
                 </p>
               </div>
