@@ -7,7 +7,7 @@
     vertical-align: middle;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 756px) {
     .text-container {
         min-width: 360px;
         min-height: 60px;

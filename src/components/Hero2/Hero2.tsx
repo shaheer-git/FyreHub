@@ -5,6 +5,7 @@ import graphicD from '../../assets/Graphic-Design-icon.svg'
 import webDesignDevIcon from '../../assets/wed-design-dev-icon.svg'
 import socialMediaIcon from '../../assets/social-media-mangt-icon.svg'
 import './Hero2.css'
+import { Link } from 'react-router-dom'
 
 export const Hero2 = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null)
@@ -71,15 +72,15 @@ export const Hero2 = () => {
             <div
               key={idx}
               className={`relative cursor-pointer group transition-all duration-300 ${service.highlighted
-                  ? 'lg:col-span-1 lg:row-span-2'
-                  : ''
+                ? 'lg:col-span-1 lg:row-span-2'
+                : ''
                 }`}
               onMouseEnter={() => setHoveredCard(idx)}
               onMouseLeave={() => setHoveredCard(null)}
             >
               <div className={`h-full rounded-3xl p-6 lg:p-8 flex flex-col items-center justify-start transition-all duration-300 overflow-hidden border-2 ${service.highlighted
-                  ? 'bg-[#AFFC41] text-[#252525] border-[#AFFC41]'
-                  : 'bg-[#2a2630] text-[#AFFC41] hover:bg-[#AFFC41] hover:text-[#252525] hover:border-[#AFFC41]'
+                ? 'bg-[#AFFC41] text-[#252525] border-[#AFFC41]'
+                : 'bg-[#2a2630] text-[#AFFC41] border border-[#AFFC41] hover:bg-[#AFFC41] hover:text-[#252525] hover:border-[#AFFC41]'
                 }`}>
                 {/* Arrow Icon */}
                 {!service.highlighted && (
@@ -91,26 +92,17 @@ export const Hero2 = () => {
                 )}
 
                 {/* Service Icon */}
-                <div className={`w-14 h-14 mb-4 flex items-center justify-center rounded-full transition-all duration-300 ${service.highlighted
-                    ? 'bg-[#252525] bg-opacity-10'
-                    : hoveredCard === idx
-                      ? 'bg-[#252525] bg-opacity-20'
-                      : 'bg-[#AFFC41] bg-opacity-20'
-                  }`}>
-                  <img src={service.icon} alt={service.title} className={`w-8 h-8 object-contain transition-all duration-300 ${service.highlighted
-                      ? 'brightness-0'
-                      : hoveredCard === idx
-                        ? 'brightness-0 invert'
-                        : ''
-                    }`} />
+                <div className={`w-14 h-14 mb-4 flex items-center justify-center rounded-full transition-all duration-300 bg-[#AFFC41]
+                  `}>
+                  <img src={service.icon} alt={service.title} className={`w-8 h-8 object-contain transition-all duration-300 brightness-0`} />
                 </div>
 
                 {/* Service Title */}
                 <h3 className={`text-lg lg:text-xl font-bold mb-3 text-center transition-colors ${service.highlighted
+                  ? 'text-[#252525]'
+                  : hoveredCard === idx
                     ? 'text-[#252525]'
-                    : hoveredCard === idx
-                      ? 'text-[#252525]'
-                      : 'text-[#AFFC41]'
+                    : 'text-[#AFFC41]'
                   }`}>
                   {service.title}
                 </h3>
@@ -118,10 +110,10 @@ export const Hero2 = () => {
                 {/* Service Description - show on hover or highlighted card */}
                 {(hoveredCard === idx || service.highlighted) && (
                   <p className={`text-sm text-center leading-relaxed animate-fade-in ${service.highlighted
+                    ? 'text-[#252525]'
+                    : hoveredCard === idx
                       ? 'text-[#252525]'
-                      : hoveredCard === idx
-                        ? 'text-[#252525]'
-                        : 'text-white'
+                      : 'text-white'
                     }`}>
                     {service.description}
                   </p>
@@ -133,10 +125,10 @@ export const Hero2 = () => {
 
         {/* Mobile/Tablet Grid */}
         <div className='md:hidden flex flex-col gap-4'>
-          {services.map((service, idx) => (
+          {services.slice(0, 3).map((service, idx) => (
             <div
               key={idx}
-              className={`rounded-2xl p-6 transition-all duration-300 border-2 bg-[#2a2630] text-[#AFFC41] border-[#2a2630] hover:bg-[#AFFC41] hover:border-[#AFFC41]
+              className={`rounded-2xl p-6 transition-all duration-300 border bg-[#2a2630] text-[#AFFC41] border-[#AFFC41]
                 `}
             >
               <div className='flex items-start gap-4'>
@@ -155,6 +147,14 @@ export const Hero2 = () => {
               </div>
             </div>
           ))}
+          <div className='flex items-center justify-center'>
+            <Link
+              to='/services'
+              className='bg-[#AFFC41] cursor-pointer hover:bg-[#aefc419d] text-[#252525] px-3 py-2 rounded-md text-sm lg:text-base font-semibold transition-colors text-center w-1/2'
+            >
+              See All
+            </Link>
+          </div>
         </div>
       </div>
     </div>

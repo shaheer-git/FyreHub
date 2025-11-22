@@ -1,4 +1,5 @@
 import './Hero3.css'
+import goatGamingTumbnail from '../../assets/goatGamingTumbnail.png'
 
 export const Hero3 = () => {
     const workCards = [
@@ -19,7 +20,7 @@ export const Hero3 = () => {
         {
             name: 'GOAT Gaming Café',
             url: 'https://goatgamingcafe.com',
-            thumbnail: 'https://image.thum.io/get/width/600/height/400/crop/1/noanimate/https://goatgamingcafe.com'
+            thumbnail: goatGamingTumbnail
         }
     ]
 
@@ -74,10 +75,18 @@ export const Hero3 = () => {
                             {workCards.map((card, idx) => (
                                 <div
                                     key={idx}
-                                    className='bg-cover rounded-xl h-[250px] w-full'
+                                    className='bg-contain bg-no-repeat rounded-xl h-[450px] w-full opacity-90'
                                     style={{ backgroundImage: `url("${card}")` }}
                                 ></div>
                             ))}
+                            {/* <div className='flex items-center justify-center'>
+                                <Link
+                                    to='/portfolio'
+                                    className='bg-[#AFFC41] cursor-pointer hover:bg-[#aefc419d] text-[#252525] px-3 py-2 rounded-md text-sm lg:text-base font-semibold transition-colors text-center w-1/2 opacity-85'
+                                >
+                                    See All
+                                </Link>
+                            </div> */}
                         </div>
 
                         <div className="grid grid-cols-2 gap-4">

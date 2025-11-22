@@ -64,7 +64,7 @@ export const Navbar = () => {
               <Link 
                 key={item.label} 
                 to={item.href} 
-                className='text-[#AFFC41] text-sm cursor-pointer hover:text-[#aefc419d] transition-colors' 
+                className='text-[#AFFC41] text-lg cursor-pointer hover:text-[#aefc419d] transition-colors' 
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.label}
@@ -72,7 +72,7 @@ export const Navbar = () => {
             ))}
             <Link 
               to='/contact'
-              className='bg-[#AFFC41] cursor-pointer hover:bg-[#aefc419d] text-[#252525] w-full py-2 rounded-md text-sm font-semibold transition-colors text-center'
+              className='bg-[#AFFC41] cursor-pointer hover:bg-[#aefc419d] text-[#252525] w-full py-2 rounded-md text-lg font-semibold transition-colors text-center'
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Get Started
