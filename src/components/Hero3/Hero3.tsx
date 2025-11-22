@@ -1,5 +1,6 @@
 import './Hero3.css'
 import goatGamingTumbnail from '../../assets/goatGamingTumbnail.png'
+import EzyScrap from '../../assets/EzyScrap.png'
 
 export const Hero3 = () => {
     const workCards = [
@@ -15,7 +16,7 @@ export const Hero3 = () => {
         {
             name: 'EzyScrap',
             url: 'https://ezyscrap.com',
-            thumbnail: 'https://image.thum.io/get/width/600/height/400/crop/1/noanimate/https://ezyscrap.com'
+            thumbnail: EzyScrap
         },
         {
             name: 'GOAT Gaming Café',

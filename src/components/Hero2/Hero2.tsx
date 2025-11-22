@@ -25,7 +25,7 @@ export const Hero2 = () => {
       title: 'Web Design & Development',
       icon: webDesignDevIcon,
       description: 'Create engaging, user-friendly websites that look great on any device. We handle everything from design to development.',
-      highlighted: true
+      highlighted: false
     },
     {
       title: 'Social Media Management',
@@ -87,7 +87,7 @@ export const Hero2 = () => {
                   <img
                     src={cardArrow}
                     alt=""
-                    className={`absolute -top-6 -right-6 w-16 h-16 opacity-30 group-hover:opacity-20 transition-opacity ${hoveredCard === idx ? 'opacity-0' : ''}`}
+                    className={`absolute -top-6 -right-6 w-16 h-16 opacity-30 group-hover:opacity-20 group-hover:rotate-[-90deg] transition-all duration-300 ${hoveredCard === idx ? 'opacity-0' : ''}`}
                   />
                 )}
 
@@ -128,7 +128,7 @@ export const Hero2 = () => {
           {services.slice(0, 3).map((service, idx) => (
             <div
               key={idx}
-              className={`rounded-2xl p-6 transition-all duration-300 border bg-[#2a2630] text-[#AFFC41] border-[#AFFC41]
+              className={`opacity-90 rounded-2xl p-6 transition-all duration-300 border bg-[#2a2630] text-[#AFFC41] border-[#AFFC41]
                 `}
             >
               <div className='flex items-start gap-4'>
@@ -137,10 +137,10 @@ export const Hero2 = () => {
                   <img src={service.icon} alt={service.title} className={`w-6 h-6 object-contain transition-all duration-300 brightness-0`} />
                 </div>
                 <div className='flex-1'>
-                  <h3 className={`text-base font-bold mb-2 transition-colors text-[#AFFC41] hover:text-[#252525]`}>
+                  <h3 className={`text-base font-bold mb-2 transition-colors text-[#AFFC41]`}>
                     {service.title}
                   </h3>
-                  <p className={`text-sm transition-colors text-[#AFFC41] hover:text-[#252525]`}>
+                  <p className={`text-sm transition-colors text-[#AFFC41]`}>
                     {service.description}
                   </p>
                 </div>
@@ -150,7 +150,7 @@ export const Hero2 = () => {
           <div className='flex items-center justify-center'>
             <Link
               to='/services'
-              className='bg-[#AFFC41] cursor-pointer hover:bg-[#aefc419d] text-[#252525] px-3 py-2 rounded-md text-sm lg:text-base font-semibold transition-colors text-center w-1/2'
+              className='opacity-90 bg-[#AFFC41] cursor-pointer hover:bg-[#aefc419d] text-[#252525] px-3 py-2 rounded-md text-sm lg:text-base font-semibold transition-colors text-center w-1/2'
             >
               See All
             </Link>

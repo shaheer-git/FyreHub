@@ -134,30 +134,21 @@ export const WhatWeDo = () => {
               >
                 <div className={`h-full rounded-3xl p-6 lg:p-8 flex flex-col items-center justify-start transition-all duration-300 overflow-hidden border-2 ${service.highlighted
                   ? 'bg-[#AFFC41] text-[#252525] border-[#AFFC41]'
-                  : 'bg-[#2a2630] text-[#AFFC41] hover:bg-[#AFFC41] hover:text-[#252525] hover:border-[#AFFC41]'
+                  : 'bg-[#2a2630] text-[#AFFC41] border border-[#AFFC41] hover:bg-[#AFFC41] hover:text-[#252525] hover:border-[#AFFC41]'
                   }`}>
                   {/* Arrow Icon */}
                   {!service.highlighted && (
                     <img
                       src={cardArrow}
                       alt=""
-                      className={`absolute -top-6 -right-6 w-16 h-16 opacity-30 group-hover:opacity-20 transition-opacity ${hoveredCard === idx ? 'opacity-0' : ''}`}
+                      className={`absolute -top-6 -right-6 w-16 h-16 opacity-30 group-hover:opacity-20 group-hover:rotate-[-90deg] transition-all duration-300 ${hoveredCard === idx ? 'opacity-0' : ''}`}
                     />
                   )}
 
                   {/* Service Icon */}
-                  <div className={`w-14 h-14 mb-4 flex items-center justify-center rounded-full transition-all duration-300 ${service.highlighted
-                    ? 'bg-[#252525] bg-opacity-10'
-                    : hoveredCard === idx
-                      ? 'bg-[#252525] bg-opacity-20'
-                      : 'bg-[#AFFC41] bg-opacity-20'
-                    }`}>
-                    <img src={service.icon} alt={service.title} className={`w-8 h-8 object-contain transition-all duration-300 ${service.highlighted
-                      ? 'brightness-0'
-                      : hoveredCard === idx
-                        ? 'brightness-0 invert'
-                        : ''
-                      }`} />
+                  <div className={`w-14 h-14 mb-4 flex items-center justify-center rounded-full transition-all duration-300 bg-[#AFFC41]
+                  `}>
+                    <img src={service.icon} alt={service.title} className={`w-8 h-8 object-contain transition-all duration-300 brightness-0`} />
                   </div>
 
                   {/* Service Title */}
@@ -172,28 +163,14 @@ export const WhatWeDo = () => {
 
                   {/* Service Description - show on hover or highlighted card */}
                   {(hoveredCard === idx || service.highlighted) && (
-                    <div className='animate-fade-in'>
-                      <p className={`text-sm text-center leading-relaxed mb-4 ${service.highlighted
+                    <p className={`text-sm text-center leading-relaxed animate-fade-in ${service.highlighted
+                      ? 'text-[#252525]'
+                      : hoveredCard === idx
                         ? 'text-[#252525]'
-                        : hoveredCard === idx
-                          ? 'text-[#252525]'
-                          : 'text-white'
-                        }`}>
-                        {service.description}
-                      </p>
-                      <div className='flex flex-wrap justify-center gap-2'>
-                        {service.features.map((feature, i) => (
-                          <span key={i} className={`text-xs px-3 py-1 rounded-full ${service.highlighted
-                            ? 'bg-[#252525] bg-opacity-20 text-[#252525]'
-                            : hoveredCard === idx
-                              ? 'bg-[#252525] bg-opacity-20 text-[#252525]'
-                              : 'bg-[#AFFC41] bg-opacity-20 text-[#AFFC41]'
-                            }`}>
-                            {feature}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
+                        : 'text-white'
+                      }`}>
+                      {service.description}
+                    </p>
                   )}
                 </div>
               </div>
