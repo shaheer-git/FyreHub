@@ -60,7 +60,7 @@ export const Hero2 = () => {
   ]
 
   return (
-    <div className='min-h-screen flex flex-col justify-center items-center py-16 md:py-20 px-4 md:px-8'>
+    <div className='min-h-screen flex flex-col justify-center items-center py-16 md:py-20 px-4 md:px-8 mt-0 md:mt-5'>
       <h1 className='text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-white mb-6 leading-tight'>
         What <span className='text-[#AFFC41] font-bold'>We Do</span>
       </h1>
@@ -109,14 +109,24 @@ export const Hero2 = () => {
 
                 {/* Service Description - show on hover or highlighted card */}
                 {(hoveredCard === idx || service.highlighted) && (
-                  <p className={`text-sm text-center leading-relaxed animate-fade-in ${service.highlighted
-                    ? 'text-[#252525]'
-                    : hoveredCard === idx
+                  <>
+                    <p className={`text-sm text-center leading-relaxed animate-fade-in ${service.highlighted
                       ? 'text-[#252525]'
-                      : 'text-white'
-                    }`}>
-                    {service.description}
-                  </p>
+                      : hoveredCard === idx
+                        ? 'text-[#252525]'
+                        : 'text-white'
+                      }`}>
+                      {service.description}
+                    </p>
+                    <div className='flex items-center justify-center mt-3'>
+                      <Link
+                        to='/services'
+                        className='opacity-90 bg-[#252525] cursor-pointer hover:bg-[#252525] text-[#AFFC41] px-3 py-2 rounded-md text-sm lg:text-base font-semibold transition-colors text-center'
+                      >
+                        View Services
+                      </Link>
+                    </div>
+                  </>
                 )}
               </div>
             </div>

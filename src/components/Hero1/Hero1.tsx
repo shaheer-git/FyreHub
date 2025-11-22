@@ -13,7 +13,7 @@ export const Hero1 = () => {
             <div className=''>
               <p className='text-5xl md:text-6xl lg:text-8xl font-light text-white leading-tight w-full text-center sm:text-left'>Are You Looking</p>
             </div>
-            <div className='flex flex-wrap justify-center ml-8 sm:justify-start'>
+            <div className='flex flex-wrap justify-center md:ml-0 ml-8 sm:justify-start'>
               <p className='text-5xl sm:text-4xl md:text-6xl lg:text-8xl font-light text-white leading-tight'>For a </p>
               <div className="text-container">
                 <div className="p-2 text-slide lg:mt-4 ml-2">
