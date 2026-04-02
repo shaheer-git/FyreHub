@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import cardArrow from '../../assets/Card-Arrow.svg'
 import branding from '../../assets/branding-icon.svg'
 import graphicD from '../../assets/Graphic-Design-icon.svg'
@@ -107,27 +108,37 @@ export const Hero2 = () => {
                   {service.title}
                 </h3>
 
-                {/* Service Description - show on hover or highlighted card */}
-                {(hoveredCard === idx || service.highlighted) && (
-                  <>
-                    <p className={`text-sm text-center leading-relaxed animate-fade-in ${service.highlighted
-                      ? 'text-[#252525]'
-                      : hoveredCard === idx
-                        ? 'text-[#252525]'
-                        : 'text-white'
+                {/* Service Description - smoothly animated on hover or highlighted */}
+                <AnimatePresence>
+                  {(hoveredCard === idx || service.highlighted) && (
+                    <motion.div
+                      key="desc"
+                      initial={{ opacity: 0, height: 0, y: 8 }}
+                      animate={{ opacity: 1, height: 'auto', y: 0 }}
+                      exit={{ opacity: 0, height: 0, y: 8 }}
+                      transition={{ duration: 0.32, ease: [0.23, 1, 0.32, 1] }}
+                      style={{ overflow: 'hidden' }}
+                    >
+                      <p className={`text-sm text-center leading-relaxed ${
+                        service.highlighted
+                          ? 'text-[#252525]'
+                          : hoveredCard === idx
+                            ? 'text-[#252525]'
+                            : 'text-white'
                       }`}>
-                      {service.description}
-                    </p>
-                    <div className='flex items-center justify-center mt-3'>
-                      <Link
-                        to='/services'
-                        className='opacity-90 bg-[#252525] cursor-pointer hover:bg-[#252525] text-[#AFFC41] px-3 py-2 rounded-md text-sm lg:text-base font-semibold transition-colors text-center'
-                      >
-                        View Services
-                      </Link>
-                    </div>
-                  </>
-                )}
+                        {service.description}
+                      </p>
+                      <div className='flex items-center justify-center mt-3'>
+                        <Link
+                          to='/services'
+                          className='opacity-90 bg-[#252525] cursor-pointer hover:bg-[#252525] text-[#AFFC41] px-3 py-2 rounded-md text-sm lg:text-base font-semibold transition-colors text-center'
+                        >
+                          View Services
+                        </Link>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             </div>
           ))}

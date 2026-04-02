@@ -15,7 +15,7 @@ export const Home = () => {
       <Navbar />
       <Hero1 />
       <Hero2 />
-      <Hero3 />
+      <Hero3 isPreview={true} />
       <Testimonials />
       <Footer />
     </div>
