@@ -1,0 +1,42 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Canvas stays fixed behind everything, always fills the viewport */
+    #canvas3d {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+    }
+
+    /* Root scrolls normally on top of the fixed canvas */
+    #root {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+    }
+
+    /* Custom cursor layers — keep above canvas */
+    .cursor-dot,
+    .cursor-ring {
+      position: fixed;
+      z-index: 9999;
+      pointer-events: none;
+    }
+
+    .fps-counter {
+      position: fixed;
+      top: 8px;
+      right: 8px;
+      z-index: 9999;
+    }
