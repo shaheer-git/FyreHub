@@ -512,10 +512,10 @@ export const Hero3 = ({ isPreview = false }: Hero3Props) => {
                 variants={containerVariants} initial="hidden" animate="show"
               >
                 {[
-                  { n: '100+', label: 'Projects Delivered' },
-                  { n: '50+', label: 'Happy Clients' },
+                  { n: '20+', label: 'Projects Delivered' },
+                  { n: '8+', label: 'Happy Clients' },
                   { n: '5', label: 'Design Categories' },
-                  { n: '3+', label: 'Years Experience' },
+                  { n: '4+', label: 'Years Experience' },
                 ].map((stat, i) => (
                   <motion.div
                     key={i} variants={cardVariants}
