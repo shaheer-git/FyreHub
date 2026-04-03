@@ -134,8 +134,11 @@ const WEB_PROJECTS = [
 ]
 
 // How many social images to show initially in preview (home) vs full (portfolio)
-const PREVIEW_LIMIT = 12   // on home page
+const PREVIEW_LIMIT = 4   // on home page
 const LOAD_MORE_STEP = 12  // how many to add each "Load More" click
+
+// Stable ordered list of tab IDs for auto-cycling (derived from CATEGORIES, never changes)
+const TAB_IDS = CATEGORIES.map(c => c.id) as CategoryId[]
 
 // ─── Animation variants ────────────────────────────────────────────────────────
 
@@ -277,12 +280,71 @@ export const Hero3 = ({ isPreview = false }: Hero3Props) => {
   const [activeTab, setActiveTab] = useState<CategoryId>('social')
   const [visibleCount, setVisible] = useState(isPreview ? PREVIEW_LIMIT : LOAD_MORE_STEP)
   const [lightbox, setLightbox] = useState<{ images: string[]; index: number } | null>(null)
-  const galleryRef = useRef<HTMLDivElement>(null)
+  const [progress, setProgress] = useState(0)          // 0–100 for the timer bar
+  const galleryRef        = useRef<HTMLDivElement>(null)
+  const userInteracting   = useRef(false)               // true while user is hovering/clicking
+  const idleTimerRef      = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const intervalRef       = useRef<ReturnType<typeof setInterval> | null>(null)
+  const progressRef       = useRef<ReturnType<typeof setInterval> | null>(null)
+  const TAB_DURATION      = 10000                        // ms per tab
+  const IDLE_RESUME_DELAY = 10000                        // ms after last interaction to resume
+
+  const startAutoPlay = useCallback(() => {
+    // Clear any existing timers
+    if (intervalRef.current)  clearInterval(intervalRef.current)
+    if (progressRef.current)  clearInterval(progressRef.current)
+    setProgress(0)
+
+    const TICK = 50 // ms
+    let elapsed = 0
+    progressRef.current = setInterval(() => {
+      elapsed += TICK
+      setProgress(Math.min((elapsed / TAB_DURATION) * 100, 100))
+    }, TICK)
+
+    intervalRef.current = setInterval(() => {
+      if (userInteracting.current) return
+      setActiveTab(prev => {
+        const idx = TAB_IDS.indexOf(prev)
+        return TAB_IDS[(idx + 1) % TAB_IDS.length]
+      })
+      setVisible(LOAD_MORE_STEP)
+      elapsed = 0
+      setProgress(0)
+    }, TAB_DURATION)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []) // TAB_IDS and constants are module-level — stable forever
+
+  const stopAutoPlay = useCallback(() => {
+    if (intervalRef.current)  clearInterval(intervalRef.current)
+    if (progressRef.current)  clearInterval(progressRef.current)
+    intervalRef.current = null
+    progressRef.current = null
+    setProgress(0)
+  }, [])
+
+  // Start auto-play only in full (portfolio) mode
+  useEffect(() => {
+    if (isPreview) return
+    startAutoPlay()
+    return () => stopAutoPlay()
+  }, [isPreview, startAutoPlay, stopAutoPlay])
+
+  const pauseAndScheduleResume = useCallback(() => {
+    userInteracting.current = true
+    stopAutoPlay()
+    if (idleTimerRef.current) clearTimeout(idleTimerRef.current)
+    idleTimerRef.current = setTimeout(() => {
+      userInteracting.current = false
+      startAutoPlay()
+    }, IDLE_RESUME_DELAY)
+  }, [startAutoPlay, stopAutoPlay])
 
   // Reset visible count when tab changes
   const handleTabChange = (id: CategoryId) => {
     setActiveTab(id)
     setVisible(LOAD_MORE_STEP)
+    pauseAndScheduleResume()
     setTimeout(() => galleryRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80)
   }
 
@@ -305,7 +367,7 @@ export const Hero3 = ({ isPreview = false }: Hero3Props) => {
 
   // ── PREVIEW MODE (Home page) ─────────────────────────────────────────────
   if (isPreview) {
-    const previewImgs = ALL_IMAGES['social'].slice(0, PREVIEW_LIMIT)
+    const previewImgs2 = Object.entries(ALL_IMAGES).map(([, images]) => images.slice(0, 2)).flat().reverse()
     return (
       <section className="flex flex-col items-center pb-20 px-4">
         {/* Heading */}
@@ -334,26 +396,25 @@ export const Hero3 = ({ isPreview = false }: Hero3Props) => {
         </div>
 
         {/* Preview grid */}
-        <div className="w-full max-w-7xl">
+        <div className="w-full max-w-7xl relative">
           <MasonryGrid
-            images={previewImgs}
-            onSelect={(i) => openLightbox(previewImgs, i)}
+            images={previewImgs2}
+            onSelect={(i) => openLightbox(previewImgs2, i)}
           />
 
-          {/* See More CTA */}
           <motion.div
-            className="flex justify-center mt-10"
+            className="flex justify-center mt-16 pb-12 relative z-[100]"
             initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
             <Link
               to="/portfolio"
-              className="group flex items-center gap-2 bg-[#AFFC41] hover:bg-[#c8ff5e] text-[#17141b] font-bold px-7 py-3.5 rounded-full text-sm tracking-wide transition-all duration-300 shadow-[0_0_24px_rgba(175,252,65,0.35)] hover:shadow-[0_0_36px_rgba(175,252,65,0.55)]"
+              className="group flex items-center gap-2 bg-[#AFFC41] hover:bg-[#c8ff5e] text-[#17141b] font-bold px-8 py-4 rounded-full text-base tracking-wide transition-all duration-300 shadow-[0_0_30px_rgba(175,252,65,0.4)] hover:shadow-[0_0_40px_rgba(175,252,65,0.6)] cursor-pointer active:scale-95 touch-manipulation"
+              style={{ pointerEvents: 'auto', WebkitTapHighlightColor: 'transparent' }}
             >
               See All Work
-              <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform duration-300" />
+              <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
           </motion.div>
         </div>
@@ -404,30 +465,42 @@ export const Hero3 = ({ isPreview = false }: Hero3Props) => {
 
         {/* Tab buttons */}
         <motion.div
-          className="flex flex-wrap justify-center gap-2 mb-10"
+          className="flex flex-col items-center gap-4 mb-10"
           initial={{ opacity: 0 }} animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.5 }}
+          onMouseEnter={pauseAndScheduleResume}
         >
-          {CATEGORIES.map(({ id, label, Icon }) => {
-            const active = activeTab === id
-            return (
-              <button
-                key={id}
-                onClick={() => handleTabChange(id)}
-                className={`
-                  flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide
-                  border transition-all duration-300 cursor-pointer
-                  ${active
-                    ? 'bg-[#AFFC41] text-[#17141b] border-[#AFFC41] shadow-[0_0_20px_rgba(175,252,65,0.4)]'
-                    : 'bg-transparent text-[#AFFC41]/70 border-[#AFFC41]/20 hover:border-[#AFFC41]/60 hover:text-[#AFFC41]'
-                  }
-                `}
-              >
-                <Icon size={15} strokeWidth={2} />
-                {label}
-              </button>
-            )
-          })}
+          <div className="flex flex-wrap justify-center gap-2">
+            {CATEGORIES.map(({ id, label, Icon }) => {
+              const active = activeTab === id
+              return (
+                <button
+                  key={id}
+                  onClick={() => handleTabChange(id)}
+                  className={`
+                    flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide
+                    border transition-all duration-300 cursor-pointer
+                    ${active
+                      ? 'bg-[#AFFC41] text-[#17141b] border-[#AFFC41] shadow-[0_0_20px_rgba(175,252,65,0.4)]'
+                      : 'bg-transparent text-[#AFFC41]/70 border-[#AFFC41]/20 hover:border-[#AFFC41]/60 hover:text-[#AFFC41]'
+                    }
+                  `}
+                >
+                  <Icon size={15} strokeWidth={2} />
+                  {label}
+                </button>
+              )
+            })}
+          </div>
+
+          {/* Auto-play progress bar */}
+          <div className="w-48 h-0.5 bg-[#AFFC41]/10 rounded-full overflow-hidden">
+            <motion.div
+              className="h-full bg-[#AFFC41] rounded-full origin-left"
+              style={{ scaleX: progress / 100 }}
+              transition={{ ease: 'linear' }}
+            />
+          </div>
         </motion.div>
 
         {/* Gallery content */}
@@ -512,10 +585,10 @@ export const Hero3 = ({ isPreview = false }: Hero3Props) => {
                 variants={containerVariants} initial="hidden" animate="show"
               >
                 {[
-                  { n: '20+', label: 'Projects Delivered' },
-                  { n: '8+', label: 'Happy Clients' },
+                  { n: '40+', label: 'Projects Delivered' },
+                  { n: '12+', label: 'Happy Clients' },
                   { n: '5', label: 'Design Categories' },
-                  { n: '4+', label: 'Years Experience' },
+                  { n: '6+', label: 'Years Experience' },
                 ].map((stat, i) => (
                   <motion.div
                     key={i} variants={cardVariants}

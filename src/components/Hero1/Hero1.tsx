@@ -43,7 +43,7 @@ export const Hero1 = () => {
                 <div className="group bg-[#252525] hover:bg-[#AFFC41] hover:border-2 hover:border-[#252525] rounded-xl transition-all duration-300 cursor-pointer">
                   <div className='flex flex-col items-center justify-center py-5 px-3 md:py-6 md:px-4 lg:py-8 lg:px-5'>
                     <div className='text-white group-hover:text-[#252525] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-1.5 md:mb-2'>
-                      20+
+                      40+
                     </div>
                     <span className='text-white group-hover:text-[#252525] text-xs sm:text-sm md:text-base text-center font-medium'>
                       Completed Projects
@@ -55,7 +55,7 @@ export const Hero1 = () => {
                 <div className="group bg-[#252525] hover:bg-[#AFFC41] hover:border-2 hover:border-[#252525] rounded-xl transition-all duration-300 cursor-pointer">
                   <div className='flex flex-col items-center justify-center py-5 px-3 md:py-6 md:px-4 lg:py-8 lg:px-5'>
                     <div className='text-white group-hover:text-[#252525] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-1.5 md:mb-2'>
-                      8+
+                      12+
                     </div>
                     <span className='text-white group-hover:text-[#252525] text-xs sm:text-sm md:text-base text-center font-medium'>
                       Happy Clients
@@ -67,7 +67,7 @@ export const Hero1 = () => {
                 <div className="group bg-[#252525] hover:bg-[#AFFC41] hover:border-2 hover:border-[#252525] rounded-xl transition-all duration-300 cursor-pointer">
                   <div className='flex flex-col items-center justify-center py-5 px-3 md:py-6 md:px-4 lg:py-8 lg:px-5'>
                     <div className='text-white group-hover:text-[#252525] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-1.5 md:mb-2'>
-                      4+ Years
+                      6+ Years
                     </div>
                     <span className='text-white group-hover:text-[#252525] text-xs sm:text-sm md:text-base text-center font-medium'>
                       Industry Experience
@@ -79,7 +79,7 @@ export const Hero1 = () => {
                 <div className="group bg-[#252525] hover:bg-[#AFFC41] hover:border-2 hover:border-[#252525] rounded-xl transition-all duration-300 cursor-pointer">
                   <div className='flex flex-col items-center justify-center py-5 px-3 md:py-6 md:px-4 lg:py-8 lg:px-5'>
                     <div className='text-[#AFFC41] group-hover:text-[#252525] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-1.5 md:mb-2'>
-                      6+
+                      8+
                     </div>
                     <span className='text-[#AFFC41] group-hover:text-[#252525] text-xs sm:text-sm md:text-base text-center font-medium'>
                       Recent Clients

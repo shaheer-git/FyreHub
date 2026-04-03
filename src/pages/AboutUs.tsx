@@ -44,15 +44,15 @@ export const AboutUs = () => {
             <div className='grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8'>
               {[
                 {
-                  title: '4+ Years Experience',
+                  title: '6+ Years Experience',
                   desc: 'Proven track record in delivering exceptional creative solutions'
                 },
                 {
-                  title: '20+ Projects Delivered',
+                  title: '40+ Projects Delivered',
                   desc: 'Successfully completed diverse projects across various industries'
                 },
                 {
-                  title: '8+ Happy Clients',
+                  title: '12+ Happy Clients',
                   desc: 'Strong relationships built on trust, quality, and results'
                 },
                 {
