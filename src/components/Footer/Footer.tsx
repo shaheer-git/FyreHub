@@ -69,8 +69,8 @@ export const Footer = () => {
                 <a href='mailto:hello@fyrehub.com' className='text-[#AFFC41] text-sm hover:text-white transition-colors'>
                   hello@fyrehub.com
                 </a>
-                <a href='tel:+919876543210' className='text-[#AFFC41] text-sm hover:text-white transition-colors'>
-                  +91 98765 43210
+                <a href='tel:+918217760281' className='text-[#AFFC41] text-sm hover:text-white transition-colors'>
+                  +91 82177 60281
                 </a>
               </div>
               <div className='flex gap-4 mt-2'>

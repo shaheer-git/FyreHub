@@ -104,12 +104,12 @@ import goatGamingThumbnail from '../../assets/goatGamingTumbnail.png'
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const CATEGORIES = [
+  { id: 'web', label: 'Websites', Icon: Globe },
   { id: 'social', label: 'Social Media', Icon: LayoutGrid },
   { id: 'books', label: 'Books', Icon: BookOpen },
   { id: 'packages', label: 'Packaging', Icon: Package },
   { id: 'menus', label: 'Menus', Icon: UtensilsCrossed },
   { id: 'ads', label: 'Ads', Icon: Megaphone },
-  { id: 'web', label: 'Websites', Icon: Globe },
 ] as const
 
 type CategoryId = typeof CATEGORIES[number]['id']
@@ -277,22 +277,22 @@ interface Hero3Props {
 // ─── Main Component ───────────────────────────────────────────────────────────
 
 export const Hero3 = ({ isPreview = false }: Hero3Props) => {
-  const [activeTab, setActiveTab] = useState<CategoryId>('social')
+  const [activeTab, setActiveTab] = useState<CategoryId>('web')
   const [visibleCount, setVisible] = useState(isPreview ? PREVIEW_LIMIT : LOAD_MORE_STEP)
   const [lightbox, setLightbox] = useState<{ images: string[]; index: number } | null>(null)
   const [progress, setProgress] = useState(0)          // 0–100 for the timer bar
-  const galleryRef        = useRef<HTMLDivElement>(null)
-  const userInteracting   = useRef(false)               // true while user is hovering/clicking
-  const idleTimerRef      = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const intervalRef       = useRef<ReturnType<typeof setInterval> | null>(null)
-  const progressRef       = useRef<ReturnType<typeof setInterval> | null>(null)
-  const TAB_DURATION      = 10000                        // ms per tab
+  const galleryRef = useRef<HTMLDivElement>(null)
+  const userInteracting = useRef(false)               // true while user is hovering/clicking
+  const idleTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const progressRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const TAB_DURATION = 10000                        // ms per tab
   const IDLE_RESUME_DELAY = 10000                        // ms after last interaction to resume
 
   const startAutoPlay = useCallback(() => {
     // Clear any existing timers
-    if (intervalRef.current)  clearInterval(intervalRef.current)
-    if (progressRef.current)  clearInterval(progressRef.current)
+    if (intervalRef.current) clearInterval(intervalRef.current)
+    if (progressRef.current) clearInterval(progressRef.current)
     setProgress(0)
 
     const TICK = 50 // ms
@@ -312,12 +312,12 @@ export const Hero3 = ({ isPreview = false }: Hero3Props) => {
       elapsed = 0
       setProgress(0)
     }, TAB_DURATION)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []) // TAB_IDS and constants are module-level — stable forever
 
   const stopAutoPlay = useCallback(() => {
-    if (intervalRef.current)  clearInterval(intervalRef.current)
-    if (progressRef.current)  clearInterval(progressRef.current)
+    if (intervalRef.current) clearInterval(intervalRef.current)
+    if (progressRef.current) clearInterval(progressRef.current)
     intervalRef.current = null
     progressRef.current = null
     setProgress(0)

@@ -24,6 +24,27 @@ export const ContactUs = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+
+    // Construct the WhatsApp message
+    const messageTemplate = `Hello FyreHub! 👋
+
+I'm reaching out from your website.
+
+*Name:* ${formData.name}
+*Email:* ${formData.email}
+*Phone:* ${formData.phone || 'Not provided'}
+*Company:* ${formData.company || 'Not provided'}
+*Service:* ${formData.service}
+
+*Message:*
+${formData.message}`
+
+    const encodedMessage = encodeURIComponent(messageTemplate)
+    const whatsappUrl = `https://wa.me/918217760281?text=${encodedMessage}`
+
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank')
+
     setSubmitted(true)
     setFormData({
       name: '',
@@ -33,7 +54,7 @@ export const ContactUs = () => {
       service: '',
       message: ''
     })
-    setTimeout(() => setSubmitted(false), 5000)
+    setTimeout(() => setSubmitted(false), 3000)
   }
 
   useEffect(() => {
@@ -70,8 +91,8 @@ export const ContactUs = () => {
               {/* Phone */}
               <div className='bg-[#2a2630] rounded-2xl p-6 md:p-8 border border-[#AFFC41] border-opacity-30 hover:border-opacity-100 transition-all duration-300 animate-slide-right' style={{ animationDelay: '0.1s' }}>
                 <h3 className='text-[#AFFC41] font-bold text-lg mb-2'>Phone</h3>
-                <a href='tel:+919876543210' className='text-[#AFFC41] hover:text-white transition-colors'>
-                  +91 98765 43210
+                <a href='tel:+918217760281' className='text-[#AFFC41] hover:text-white transition-colors'>
+                  +91 82177 60281
                 </a>
               </div>
 
@@ -136,7 +157,7 @@ export const ContactUs = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     className='w-full bg-[#3d3843] text-white rounded-lg px-4 py-3 border border-[#AFFC41] border-opacity-20 focus:border-opacity-100 focus:outline-none transition-all'
-                    placeholder='+91 98765 43210'
+                    placeholder='+91 82177 60281'
                   />
                 </div>
 
