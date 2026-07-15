@@ -83,8 +83,8 @@ ${formData.message}`
               {/* Email */}
               <div className='bg-[#2a2630] rounded-2xl p-6 md:p-8 border border-[#AFFC41] border-opacity-30 hover:border-opacity-100 transition-all duration-300 animate-slide-right'>
                 <h3 className='text-[#AFFC41] font-bold text-lg mb-2'>Email</h3>
-                <a href='mailto:hello@fyrehub.com' className='text-[#AFFC41] hover:text-white transition-colors'>
-                  hello@fyrehub.com
+                <a href='mailto:sales.fyrehub@gmail.com' className='text-[#AFFC41] hover:text-white transition-colors'>
+                 sales.fyrehub@gmail.com
                 </a>
               </div>
 

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fyrehub.in/sitemap.xml
