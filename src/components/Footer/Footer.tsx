@@ -96,10 +96,10 @@ export const Footer = () => {
               &copy; {currentYear} FyreHub. All rights reserved.
             </p>
             <div className='flex gap-6'>
-              <a href='#' className='text-[#AFFC41] text-xs hover:text-white transition-colors'>
+              <a href='https://site.privacy.fyrehub.in/' target='_blank' rel='noopener noreferrer' className='text-[#AFFC41] text-xs hover:text-white transition-colors'>
                 Privacy Policy
               </a>
-              <a href='#' className='text-[#AFFC41] text-xs hover:text-white transition-colors'>
+              <a href='https://site.terms.fyrehub.in/' target='_blank' rel='noopener noreferrer' className='text-[#AFFC41] text-xs hover:text-white transition-colors'>
                 Terms of Service
               </a>
             </div>
