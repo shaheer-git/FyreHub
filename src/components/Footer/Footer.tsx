@@ -55,10 +55,10 @@ export const Footer = () => {
             <div className='flex flex-col gap-4'>
               <h4 className='text-[#AFFC41] font-bold text-base md:text-lg'>Services</h4>
               <div className='flex flex-col gap-2'>
+                <Link to='/services' className='text-[#AFFC41] text-sm hover:text-white transition-colors'>Digital Marketing</Link>
                 <Link to='/services' className='text-[#AFFC41] text-sm hover:text-white transition-colors'>Web Design</Link>
+                <Link to='/services' className='text-[#AFFC41] text-sm hover:text-white transition-colors'>Social Media</Link>
                 <Link to='/services' className='text-[#AFFC41] text-sm hover:text-white transition-colors'>Branding</Link>
-                <Link to='/services' className='text-[#AFFC41] text-sm hover:text-white transition-colors'>Marketing</Link>
-                <Link to='/services' className='text-[#AFFC41] text-sm hover:text-white transition-colors'>Photography</Link>
               </div>
             </div>
 

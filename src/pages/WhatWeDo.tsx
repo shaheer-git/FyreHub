@@ -13,18 +13,33 @@ export const WhatWeDo = () => {
 
   const services = [
     {
-      title: 'Branding & Identity',
+      title: 'Digital Marketing & Advertising',
       icon: branding,
-      tagLine: `More Than a Logo. It's Your Legacy`,
-      description: 'Your brand is the immediate emotional response customers have when they hear your name. It is the soul of your business made visible. We move beyond surface-level aesthetics to build brands that breathe, speak, and connect. Whether you are a startup looking for a face or a legacy company seeking a voice, we forge identities that resonate in a crowded marketplace.',
+      tagLine: 'Data-Driven Strategies. Measurable Growth',
+      description: 'Hope is not a strategy. We rely on hard data and behavioural psychology to put your message in front of the right people at the exact right moment. From search engines to social feeds, we optimize every dollar of your ad spend to ensure maximum return on investment. We don\'t just drive traffic; we drive qualified leads.',
       listHeading: 'What We Deliver:',
       listItems: [
-        'Brand Strategy & Positioning: Defining your "Why" and your place in the market',
-        'Visual Identity Systems: Logo design, typography, colour palettes, and usage guidelines.',
-        'Brand Voice & Messaging: Crafting a consistent verbal personality that speaks to your audience, not at them',
-        'Touchpoint Design: Ensuring your brand looks consistent from business cards to billboards.',
+        'PPC (Pay-Per-Click): Google Ads and Bing Ads management',
+        'Social Advertising: Targeted campaigns on Meta (Facebook/Instagram), LinkedIn, and TikTok',
+        'SEO (Search Engine Optimization): Technical and on-page optimization to own the organic rankings',
+        'Retargeting Campaigns: Re-engaging visitors who didn\'t convert the first time',
       ],
-      features: ['Logo Design', 'Brand Guidelines', 'Color Palette', 'Typography'],
+      features: ['SEO Strategy', 'PPC Campaigns', 'Email Marketing', 'Analytics'],
+      highlighted: true
+    },
+    {
+      title: 'Web Design & Development',
+      icon: webDesignDevIcon,
+      tagLine: 'Where Aesthetics Meet Architecture',
+      description: 'Your website is the hub of your digital universe. If it fails, your marketing fails. We don\'t believe in templates; we build digital experiences. Combining psychological design principles with rock-solid code, we create websites that are as functional as they are beautiful. From intuitive landing pages to complex enterprise platforms, we build for conversion, speed, and scale.',
+      listHeading: 'What We Deliver:',
+      listItems: [
+        'Custom UI/UX Design: Bespoke interfaces tailored to guide your specific user journey',
+        'Full-Stack Development: Robust & Secure coding using modern frameworks (React, Angular, WordPress etc...)',
+        'E-Commerce Solutions: High-converting online stores designed for friction-free checkout',
+        'Performance & SEO Architecture: Ensuring your site loads instantly and is structured for search engine dominance',
+      ],
+      features: ['Responsive Design', 'UX/UI', 'Development', 'Optimization'],
       highlighted: true
     },
     {
@@ -43,6 +58,21 @@ export const WhatWeDo = () => {
       highlighted: true
     },
     {
+      title: 'Branding & Identity',
+      icon: branding,
+      tagLine: `More Than a Logo. It's Your Legacy`,
+      description: 'Your brand is the immediate emotional response customers have when they hear your name. It is the soul of your business made visible. We move beyond surface-level aesthetics to build brands that breathe, speak, and connect. Whether you are a startup looking for a face or a legacy company seeking a voice, we forge identities that resonate in a crowded marketplace.',
+      listHeading: 'What We Deliver:',
+      listItems: [
+        'Brand Strategy & Positioning: Defining your "Why" and your place in the market',
+        'Visual Identity Systems: Logo design, typography, colour palettes, and usage guidelines.',
+        'Brand Voice & Messaging: Crafting a consistent verbal personality that speaks to your audience, not at them',
+        'Touchpoint Design: Ensuring your brand looks consistent from business cards to billboards.',
+      ],
+      features: ['Logo Design', 'Brand Guidelines', 'Color Palette', 'Typography'],
+      highlighted: true
+    },
+    {
       title: 'Content Creation',
       icon: branding,
       tagLine: 'Storytelling That Sells',
@@ -55,21 +85,6 @@ export const WhatWeDo = () => {
         'Case Studies: Proof of your success, written to persuade',
       ],
       features: ['Blog Writing', 'Video Production', 'Copywriting', 'Photography'],
-      highlighted: true
-    },
-    {
-      title: 'Digital Marketing & Advertising',
-      icon: branding,
-      tagLine: 'Data-Driven Strategies. Measurable Growth',
-      description: 'Hope is not a strategy. We rely on hard data and behavioural psychology to put your message in front of the right people at the exact right moment. From search engines to social feeds, we optimize every dollar of your ad spend to ensure maximum return on investment. We don\'t just drive traffic; we drive qualified leads.',
-      listHeading: 'What We Deliver:',
-      listItems: [
-        'PPC (Pay-Per-Click): Google Ads and Bing Ads management',
-        'Social Advertising: Targeted campaigns on Meta (Facebook/Instagram), LinkedIn, and TikTok',
-        'SEO (Search Engine Optimization): Technical and on-page optimization to own the organic rankings',
-        'Retargeting Campaigns: Re-engaging visitors who didn\'t convert the first time',
-      ],
-      features: ['SEO Strategy', 'PPC Campaigns', 'Email Marketing', 'Analytics'],
       highlighted: true
     },
     {
@@ -115,21 +130,6 @@ export const WhatWeDo = () => {
         'Trend Forecasting: Helping you stay ahead of industry shifts',
       ],
       features: ['Brand Audits', 'Strategy Workshops', 'Campaign Planning', 'Consulting'],
-      highlighted: true
-    },
-    {
-      title: 'Web Design & Development',
-      icon: webDesignDevIcon,
-      tagLine: 'Where Aesthetics Meet Architecture',
-      description: 'Your website is the hub of your digital universe. If it fails, your marketing fails. We don\'t believe in templates; we build digital experiences. Combining psychological design principles with rock-solid code, we create websites that are as functional as they are beautiful. From intuitive landing pages to complex enterprise platforms, we build for conversion, speed, and scale.',
-      listHeading: 'What We Deliver:',
-      listItems: [
-        'Custom UI/UX Design: Bespoke interfaces tailored to guide your specific user journey',
-        'Full-Stack Development: Robust & Secure coding using modern frameworks (React, Angular, WordPress etc...)',
-        'E-Commerce Solutions: High-converting online stores designed for friction-free checkout',
-        'Performance & SEO Architecture: Ensuring your site loads instantly and is structured for search engine dominance',
-      ],
-      features: ['Responsive Design', 'UX/UI', 'Development', 'Optimization'],
       highlighted: true
     }
   ]

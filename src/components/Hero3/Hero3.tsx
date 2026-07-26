@@ -129,7 +129,7 @@ const ALL_IMAGES: Record<string, string[]> = {
 const MARQUEE_POOL = [sm28, sm29, sm30, sm35, sm42, sm45, sm48, sm49, sm51, sm55, sm67, sm60]
 
 const WEB_PROJECTS = [
-  { name: 'EzyScrap', url: 'https://ezyscrap.com', img: EzyScrap, desc: 'E-Commerce / Web Platform' },
+  { name: 'EzyScrap', url: 'https://ezyscrap.netlify.app/', img: EzyScrap, desc: 'E-Commerce / Web Platform' },
   { name: 'GOAT Gaming Café', url: 'https://goatgamingcafe.com', img: goatGamingThumbnail, desc: 'Hospitality & Gaming Brand' },
 ]
 

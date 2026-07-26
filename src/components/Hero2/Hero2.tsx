@@ -13,14 +13,9 @@ export const Hero2 = () => {
 
   const services = [
     {
-      title: 'Branding & Identity',
+      title: 'Digital Marketing & Advertising',
       icon: branding,
-      description: 'We craft memorable brand identities that reflect your company\'s values and vision.'
-    },
-    {
-      title: 'Graphic Design',
-      icon: graphicD,
-      description: 'From social media posts to print materials, we design stunning visuals tailored to your brand.'
+      description: 'Boost your reach with data-driven marketing strategies tailored to your goals.'
     },
     {
       title: 'Web Design & Development',
@@ -34,14 +29,19 @@ export const Hero2 = () => {
       description: 'Let us grow your online presence with content that resonates with your audience.'
     },
     {
+      title: 'Branding & Identity',
+      icon: branding,
+      description: 'We craft memorable brand identities that reflect your company\'s values and vision.'
+    },
+    {
       title: 'Content Creation',
       icon: branding,
       description: 'We produce captivating content including blogs, articles, and videos for your brand.'
     },
     {
-      title: 'Digital Marketing & Advertising',
-      icon: branding,
-      description: 'Boost your reach with data-driven marketing strategies tailored to your goals.'
+      title: 'Graphic Design',
+      icon: graphicD,
+      description: 'From social media posts to print materials, we design stunning visuals tailored to your brand.'
     },
     {
       title: 'Motion Graphics & Animation',

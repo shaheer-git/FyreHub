@@ -186,12 +186,12 @@ ${formData.message}`
                   className='w-full bg-[#3d3843] text-white rounded-lg px-4 py-3 border border-[#AFFC41] border-opacity-20 focus:border-opacity-100 focus:outline-none transition-all'
                 >
                   <option value=''>Select a service</option>
-                  <option value='branding'>Branding & Identity</option>
-                  <option value='graphic'>Graphic Design</option>
+                  <option value='marketing'>Digital Marketing & Advertising</option>
                   <option value='web'>Web Design & Development</option>
                   <option value='social'>Social Media Management</option>
+                  <option value='branding'>Branding & Identity</option>
                   <option value='content'>Content Creation</option>
-                  <option value='marketing'>Digital Marketing</option>
+                  <option value='graphic'>Graphic Design</option>
                   <option value='animation'>Motion Graphics & Animation</option>
                   <option value='photography'>Photography & Videography</option>
                   <option value='consultation'>Creative Consultation</option>
